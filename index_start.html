@@ -30,11 +30,11 @@
 
         <div class="container">
         <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+        <input type="text" placeholder="Enter Username" name="uname" id="userName"required>
 
         
             
-        <button type="submit">Login</button>
+        <button type="submit" id="logInSubmit">Login</button>
         <label>
             <input type="checkbox" checked="checked"> Remember me
         </label>
@@ -59,12 +59,19 @@ $(document).ready(function(){
         console.log("clicked");
         $("#startBox").hide();
         $("#logInModal").show();
+        
 
    }); 
+   
    $(".close").on("click", function() {
-    $("#logInModal").hide();
-    $("#startBox").show();
+        $("#logInModal").hide();
+        $("#startBox").show();
 
+   });
+   
+   $("#logInSubmit").on("click", function() {
+    var userName = $("#userName").val();
+        console.log(userName);
    });
 
 });
