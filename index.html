@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--bootstrap link-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="../recipeapp/assets/style.css" type="text/css">
     
        
     <title>Recipe App</title>
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-    <script src="moment.js"></script>
+    <!-- <script src="moment.js"></script> -->
     
     
 </head>
@@ -45,6 +45,29 @@
                 </div> 
         
         </div>
+        
+        
+        <!-- <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                        <h3 class="panel-title">Videos</h3>
+                </div> 
+                
+                <div class="panel-body">
+                <div class="well">
+                    <img src = "http://via.placeholder.com/200x150" class = "thumbnail">
+                    <h3>Video Title</h3>
+                    <p>video details</p>
+                    
+
+                </div>
+                
+                </div>
+
+            </div>
+        </div>
+     -->
+    
     </div>
 
 
@@ -64,30 +87,60 @@
                             <label for="ingredient">Ingredient:</label>
                             <input type="text" class="form-control" id="ingredient">
                         </div>
+
+                        <div class="col-lg-6">
+                            <div class="checkbox filter">
+                            <label><input type="checkbox" value="highProtein">High Protein</label>
+                            </div>
+                            <div class="checkbox filter">
+                            <label><input type="checkbox" value="paleo">Paleo</label>
+                            </div>
+                            <div class="checkbox filter">
+                            <label><input type="checkbox" value="lowCarb">Low Carb</label>
+                            </div>
+                            <div class="checkbox filter">
+                                <label><input type="checkbox" value="nutAllergy" disabled>Nut Allergy</label>
+                            </div>
+                            <div class="checkbox filter">
+                            <label><input type="checkbox" value="glutenFree">Gluten Free</label>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="checkbox">
+                            <label><input type="checkbox" value="dairyAllergy">Dairy Allergy</label>
+                            </div>  
+                            <div class="checkbox">
+                            <label><input type="checkbox" value="pnutAllergy">Peanut Allergy</label>
+                            </div>
+                            <div class="checkbox">
+                            <label><input type="checkbox" value="treenutAllergy">Treenut Allergy</label>
+                            </div>
+                            <div class="checkbox">
+                            <label><input type="checkbox" value="vegan">Vegan</label>
+                            </div>
+                            <div class="checkbox">
+                            <label><input type="checkbox" value="vegetarian">Vegetarian</label>
+                            </div>   
+                        </div>
+
+
                         
-                        <div class="form-group">
+                         
+                            
+                           
+
+                        <!-- <div class="form-group">
                             <label for="health">Allergies:</label>
                                 <select class="form-control" id="health">
+                                  <option id="none">None</option>  
                                   <option id="gluten">Gluten Free</option>
                                   <option id="dairy">Dairy Allergy</option>
                                   <option id="carb">Low Carb</option>
                                   <option id="protein">High Protein</option>
                                 </select>
-                        </div>
-                             
-                              
-                        
-
-<!-- 
-                        <div class="form-group">
-                            <label for="startYear">Start Date:</label>:</label>
-                            <input type="text" class="form-control" id="startDate">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="rate">Monthly Rate:</label>:</label>
-                            <input type="text" class="form-control" id="rate">
                         </div> -->
+                    
                         
                         <button type="submit" class="btn btn-default" id="submitBtn">Submit</button>
                         
@@ -97,10 +150,44 @@
         </div>
     </div>
  
-
+<!-- scripts for ajax, firebase, and javascript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>        
-   
-<script src="logic.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<script src="../recipeapp/assets/logic.js"></script>
+<script>
+    $(document).ready(function() {
+
+
+    var ingredient = $('#ingredient');
+    var healthFlag = $('#health');
+
+    $('#submitBtn').on('click', function(e) {
+        e.preventDefault();
+        console.log(ingredient.val());
+        console.log(healthFlag).val();
+      
+      $('#recipe-display').empty();
+      
+      
+        var wellDiv = $('<div></div>');
+        wellDiv.addClass('well');
+        wellDiv.attr('id', 'recipeWell');
+        
+        
+        $('#recipeDisplay').append(wellDiv);
+        wellDiv.text('<h2>' + ingredient + '</h2>');
+        console.log(wellDiv);
+        
+        
+
+         });
+       
+
+    });
+    
+
+
+</script>
 </body>
 
 </html>
