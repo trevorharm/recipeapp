@@ -6,16 +6,16 @@ $( ".filter" ).each(function( item ) {
   });
 console.log(filters);
 
-var recipe = "https://api.edamam.com/search?q=";
+var api = "https://api.edamam.com/search?q=";
 var search = "chicken";
 var key = "&app_id=165d9a3a&app_key=13ed1985dcd9cb0a99bedc7ce4a3ef80";
 // combine all strings in filters into var nut
 var nut = "";
 $(filters).each(function (item){
-    $(this).text
+    nut += item;
 });
-//console.log(nut);
-var urlSearch = recipe + search + key;
+console.log(nut);
+var urlSearch = api + search + key;
 console.log(urlSearch);
 $.ajax({url: urlSearch, success: function(result){
     console.log(result);
