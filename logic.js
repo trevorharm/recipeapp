@@ -1,20 +1,17 @@
 // api url
+var nut = "";
 var filters = [];
 $( ".filter" ).each(function( item ) {
     var f = $(this).data("filter");
+    nut += f;
     filters.push(f);
   });
 console.log(filters);
+console.log(nut);
 
 var api = "https://api.edamam.com/search?q=";
 var search = "chicken";
 var key = "&app_id=165d9a3a&app_key=13ed1985dcd9cb0a99bedc7ce4a3ef80";
-// combine all strings in filters into var nut
-var nut = "";
-$(filters).each(function (item){
-    nut += item;
-});
-console.log(nut);
 var urlSearch = api + search + key;
 console.log(urlSearch);
 $.ajax({url: urlSearch, success: function(result){
