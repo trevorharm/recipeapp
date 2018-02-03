@@ -11,7 +11,7 @@
        
     <title>Recipe App</title>
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-    <script src="moment.js"></script>
+    <!-- <script src="moment.js"></script> -->
     
     
 </head>
@@ -68,6 +68,7 @@
                         <div class="form-group">
                             <label for="health">Allergies:</label>
                                 <select class="form-control" id="health">
+                                  <option id="none">None</option>  
                                   <option id="gluten">Gluten Free</option>
                                   <option id="dairy">Dairy Allergy</option>
                                   <option id="carb">Low Carb</option>
@@ -101,6 +102,40 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>        
    
 <script src="logic.js"></script>
+<script>
+    $(document).ready(function() {
+
+
+    var ingredient = $('#ingredient');
+    var healthFlag = $('#health');
+
+    $('#submitBtn').on('click', function(e) {
+        e.preventDefault();
+        console.log(ingredient.val());
+        console.log(healthFlag).val();
+      
+      $('#recipe-display').empty();
+      
+      
+        var wellDiv = $('<div></div>');
+        wellDiv.addClass('well');
+        wellDiv.attr('id', 'recipeWell');
+        
+        
+        $('#recipeDisplay').append(wellDiv);
+        wellDiv.text('<h2>' + ingredient + '</h2>');
+        console.log(wellDiv);
+        
+        
+
+         });
+       
+
+    });
+    
+
+
+</script>
 </body>
 
 </html>
