@@ -4,25 +4,30 @@ img {
     
 }
 
-.well {
-    height: 200px;
+h1 {
+    font-weight: bold;
+    text-shadow: 4px 4px 4px darkred;
 }
 
-/* .jumbotron {
-    background-color: red;
-    color: white;
-} */
+.well {
+    height: 200px;
+    border: 3px solid red;
+}
+
+
 
 .panel .panel-heading, .jumbotron {
     background-color: red;
     color: white;
+    border: 4px solid darkred;
+    
 }
 
 
 
 
 .panel-body {
-    border: 4px solid red;
+    border: 4px solid darkred;
     color: red;
 }
 
@@ -35,4 +40,14 @@ img {
 
 .thumbnail {
     background-color: red;
+}
+
+#logIn {
+    width:400px;
+    height:100px;
+}
+
+#logInModal {
+    height: 300px;
+    width: 800px;
 }
