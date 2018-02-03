@@ -10,8 +10,7 @@
     
        
     <title>Recipe App</title>
-    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-    <script src="moment.js"></script>
+    
     
     
 </head>
@@ -36,7 +35,7 @@
                             <div class="well" id="recipe-display">
                                 <img src="http://via.placeholder.com/150x150" class="thumbnail">
                                 <h3>Recipe Name:</h3>
-                                <h5>Deatials about the recipe</h5>
+                                <h5>Details about the recipe</h5>
                                 <h5>ingredients</h5>
 
                            </div>
@@ -72,8 +71,16 @@
                                   <option id="dairy">Dairy Allergy</option>
                                   <option id="carb">Low Carb</option>
                                   <option id="protein">High Protein</option>
+                                  <option >Kosher</option>
+                                  
                                 </select>
                         </div>
+                        <div class="form-group">
+                            <input class="filter" data-filter="health=kosher" type="checkbox">
+                            <input class="filter" data-filter="health=dairy-free"type="checkbox">
+                            <input class="filter" data-filter="health=low-sodium"type="checkbox">
+                        </div>
+                        
                              
                               
                         
@@ -99,7 +106,7 @@
  
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>        
-   
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
 <script src="logic.js"></script>
 </body>
 
