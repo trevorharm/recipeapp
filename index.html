@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--bootstrap link-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="../recipeapp/assets/style.css" type="text/css">
+    <link rel="stylesheet" href="../recipeapp/assets/css/style.css" type="text/css">
     
        
     <title>Recipe App</title>
@@ -43,35 +43,14 @@
                 </div> 
         
         </div>
-        
-        
-        <!-- <div class="col-lg-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                        <h3 class="panel-title">Videos</h3>
-                </div> 
-                
-                <div class="panel-body">
-                <div class="well">
-                    <img src = "http://via.placeholder.com/200x150" class = "thumbnail">
-                    <h3>Video Title</h3>
-                    <p>video details</p>
-                    
 
-                </div>
-                
-                </div>
-
-            </div>
-        </div>
-     -->
     
     </div>
 
 
 
 
-    <!-- ============== Recipe Search panel ===============================-->
+    <!-- ============================================= Recipe Search panel ================================================-->
     
     <div class="row">
         <div class="col-lg-12">
@@ -122,46 +101,7 @@
                             </div>   
                         </div>
 
-
-                        
-                         
-                            
-                           
-
-                        <!-- <div class="form-group">
-                            <label for="health">Allergies:</label>
-                                <select class="form-control" id="health">
-                                  <option id="none">None</option>  
-                                  <option id="gluten">Gluten Free</option>
-                                  <option id="dairy">Dairy Allergy</option>
-                                  <option id="carb">Low Carb</option>
-                                  <option id="protein">High Protein</option>
-                                  <option >Kosher</option>
-                                  
-                                </select>
-                        </div>
-                        <div class="form-group">
-                            <input class="filter" data-filter="health=kosher" type="checkbox">
-                            <input class="filter" data-filter="health=dairy-free"type="checkbox">
-                            <input class="filter" data-filter="health=low-sodium"type="checkbox">
-                        </div>
-                        
-                             
-                              
-                        
-
-
-                        <div class="form-group">
-                            <label for="startYear">Start Date:</label>:</label>
-                            <input type="text" class="form-control" id="startDate">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="rate">Monthly Rate:</label>:</label>
-                            <input type="text" class="form-control" id="rate">
-                        </div> -->
-                    
-                        
+                                           
                         <button type="submit" class="btn btn-default" id="submitBtn">Submit</button>
                         
                     </form>
@@ -169,6 +109,33 @@
             </div>
         </div>
     </div>
+<!-- ======================== start screen=================== -->
+<div class="modal" id="logInModal">
+    <form class="modal-content animate">
+        <div class="imgcontainer">
+        <span class="close" title="Close Modal">&times;</span>
+        <img src="http://via.placeholder.com/150x150" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" id="userName"required>
+
+        
+            
+        <button type="submit" id="logInSubmit">Login</button>
+        <label>
+            <input type="checkbox" checked="checked"> Remember me
+        </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+           
+        </div>
+    </form> 
+
+</div>
  
 <!-- scripts for ajax, firebase, and javascript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>        
