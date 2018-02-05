@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--bootstrap link-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="../recipeapp/assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="../recipeappDev/assets/css/style.css" type="text/css">
     
        
     <title>Recipe App</title>
@@ -15,42 +15,71 @@
 </head>
 <body>
 
-<div class="container">
+
+    <!--================================ START BOX ======================================-->
+<div class="container" id="startBox">
+        <div class="jumbotron">
+            <h1>RecipeApp:</h1>
+            <button class="btn btn-danger center-block" id="logInBtn">Log In</button>
+        </div>
+</div>
+
+
+<!-- ================================== LOG IN MODAL ================================ -->
+<div id="logInModal" class="modal center-block" role="dialog">
+    <div class="modal-dialog">
     
-    <!--jumbotron-->
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header jumbotron">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Log In Page:</h4>
+            </div>
+        
+            <form class="modal-body">
+                <label for="userName" id="userLabel"><b>username:</b></label>
+                <input type="text" class="form-control" placeholder="Enter Username" id="userName" required>
+
+                <button type="submit" class="btn btn-danger"id="logInSubmit">Login</button>
+            </form>
+        </div>
+    
+    </div>
+</div>
+
+
+<!--======================================== MAIN SCREEN ===================================-->
+<div class="container" id="mainScreen">
     <div class="jumbotron">
         <h1>Recipe App:</h1>
     </div>    
-    <!-- Recipes Display    -->
-
+   
+   
+    <!--======================================= RECIPE DISPLAY==============================-->
     <div class="row">
         <div class="col-lg-12">
-                <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Recipe Results</h3>
-                        </div> 
-                        <div class="panel-body">
-                           
-                            <div class="well" id="recipe-display">
-                                <img src="http://via.placeholder.com/150x150" class="thumbnail">
-                                <h3>Recipe Name:</h3>
-                                <h5>Details about the recipe</h5>
-                                <h5>ingredients</h5>
+            <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Recipe Results</h3>
+                    </div> 
+                    <div class="panel-body">
+                        
+                        <div class="well" id="recipe-display">
+                            <img src="http://via.placeholder.com/150x150" class="thumbnail">
+                            <h3>Recipe Name:</h3>
+                            <h5>Details about the recipe</h5>
+                            <h5>ingredients</h5>
 
-                           </div>
-                                                
-                        </div>   
-                </div> 
-        
+                        </div>
+                                            
+                    </div>   
+            </div> 
         </div>
 
     
     </div>
 
-
-
-
-    <!-- ============================================= Recipe Search panel ================================================-->
+ <!-- =================================== SEARCH PANEL =====================================-->
     
     <div class="row">
         <div class="col-lg-12">
@@ -64,40 +93,40 @@
                             <label for="ingredient">Ingredient:</label>
                             <input type="text" class="form-control" id="ingredient">
                         </div>
-
+                        <!-- checkboxes... add data-health to sort with health values? -->
                         <div class="col-lg-6">
                             <div class="checkbox filter">
-                            <label><input type="checkbox" value="highProtein">High Protein</label>
+                                <label><input type="checkbox" value="highProtein" data-health="protein">High Protein</label>
                             </div>
                             <div class="checkbox filter">
-                            <label><input type="checkbox" value="paleo">Paleo</label>
+                                <label><input type="checkbox" value="paleo" data-health="paleo">Paleo</label>
                             </div>
                             <div class="checkbox filter">
-                            <label><input type="checkbox" value="lowCarb">Low Carb</label>
+                                <label><input type="checkbox" value="lowCarb">Low Carb</label>
                             </div>
                             <div class="checkbox filter">
-                                <label><input type="checkbox" value="nutAllergy" disabled>Nut Allergy</label>
+                                <label><input type="checkbox" value="nutAllergy">Nut Allergy</label>
                             </div>
                             <div class="checkbox filter">
-                            <label><input type="checkbox" value="glutenFree">Gluten Free</label>
+                                <label><input type="checkbox" value="glutenFree">Gluten Free</label>
                             </div>
                         </div>
 
                         <div class="col-lg-6">
                             <div class="checkbox">
-                            <label><input type="checkbox" value="dairyAllergy">Dairy Allergy</label>
+                                <label><input type="checkbox" value="dairyAllergy">Dairy Allergy</label>
                             </div>  
                             <div class="checkbox">
-                            <label><input type="checkbox" value="pnutAllergy">Peanut Allergy</label>
+                                <label><input type="checkbox" value="pnutAllergy">Peanut Allergy</label>
                             </div>
-                            <div class="checkbox">
+                                <div class="checkbox">
                             <label><input type="checkbox" value="treenutAllergy">Treenut Allergy</label>
                             </div>
                             <div class="checkbox">
-                            <label><input type="checkbox" value="vegan">Vegan</label>
+                                <label><input type="checkbox" value="vegan">Vegan</label>
                             </div>
                             <div class="checkbox">
-                            <label><input type="checkbox" value="vegetarian">Vegetarian</label>
+                                <label><input type="checkbox" value="vegetarian">Vegetarian</label>
                             </div>   
                         </div>
 
@@ -109,74 +138,16 @@
             </div>
         </div>
     </div>
-<!-- ======================== start screen=================== -->
-<div class="modal" id="logInModal">
-    <form class="modal-content animate">
-        <div class="imgcontainer">
-        <span class="close" title="Close Modal">&times;</span>
-        <img src="http://via.placeholder.com/150x150" alt="Avatar" class="avatar">
-        </div>
+</div>    
 
-        <div class="container">
-        <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" id="userName"required>
-
-        
-            
-        <button type="submit" id="logInSubmit">Login</button>
-        <label>
-            <input type="checkbox" checked="checked"> Remember me
-        </label>
-        </div>
-
-        <div class="container" style="background-color:#f1f1f1">
-            <button type="button" class="cancelbtn">Cancel</button>
-           
-        </div>
-    </form> 
-
-</div>
  
 <!-- scripts for ajax, firebase, and javascript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>        
 <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
-<script src="../recipeapp/assets/logic.js"></script>
-<script src="../recipeapp/assets/logic-ajax.js"></script>
-<script src="../recipeapp/assets/logic-firebase.js"></script>
-<script>
-    $(document).ready(function() {
-
-
-    var ingredient = $('#ingredient');
-    var healthFlag = $('#health');
-
-    $('#submitBtn').on('click', function(e) {
-        e.preventDefault();
-        console.log(ingredient.val());
-        console.log(healthFlag).val();
-      
-      $('#recipe-display').empty();
-      
-      
-        var wellDiv = $('<div></div>');
-        wellDiv.addClass('well');
-        wellDiv.attr('id', 'recipeWell');
-        
-        
-        $('#recipeDisplay').append(wellDiv);
-        wellDiv.text('<h2>' + ingredient + '</h2>');
-        console.log(wellDiv);
-        
-        
-
-         });
-       
-
-    });
-    
-
-
-</script>
+<!-- <script src="../recipeappDev/assets/javascript/logic.js"></script> -->
+<!-- <script src="../recipeappDev/assets/javascript/logic-ajax.js"></script> -->
+<!-- <script src="../recipeappDev/assets/javascript/logic-firebase.js"></script> -->
+<script src="../recipeappDev/assets/javascript/logic-login.js"></script>
 </body>
 
 </html>

@@ -12,7 +12,9 @@ img {
     
 }
 
-h1 {
+
+
+h1, h4 {
     font-weight: bold;
     text-shadow: 4px 4px 4px darkred;
 }
@@ -35,27 +37,45 @@ h1 {
 
 
 .panel-body {
-    border: 4px solid darkred;
+    border-left: 3px solid darkred;
+    border-right: 3px solid darkred;
+    border-bottom: 3px solid darkred;
     color: red;
 }
 
 .form-control:focus {
-    border-color: red;
+    border-color: darkred;
     box-shadow: 0 0 8px red;
 }
 
 
 
-.thumbnail {
-    background-color: red;
-}
 
-#logIn {
+#logInBtn {
     width:400px;
     height:100px;
+    font-weight: bold;
+    font-size: 35px;
 }
 
 #logInModal {
-    height: 300px;
+    height: 500px;
     width: 800px;
+}
+
+
+
+#logInSubmit {
+    font-weight: bold;
+    padding: 10px;
+    margin:15px 0 15px 0;
+}
+
+
+
+#userLabel {
+   font-size: 20px;
+   padding-left: 10px;
+   border-left: 3px solid red;
+   margin-bottom: 15px;
 }
