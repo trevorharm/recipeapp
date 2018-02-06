@@ -43,11 +43,10 @@ h1, h4 {
     color: red;
 }
 
-.form-control:focus {
+.form-control:focus, .filter:focus {
     border-color: darkred;
     box-shadow: 0 0 8px red;
 }
-
 
 
 
@@ -78,4 +77,8 @@ h1, h4 {
    padding-left: 10px;
    border-left: 3px solid red;
    margin-bottom: 15px;
+}
+
+.checkbox label, .panel-title {
+    font-weight: bold;
 }
