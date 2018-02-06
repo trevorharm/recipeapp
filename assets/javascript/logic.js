@@ -36,6 +36,8 @@ $(document).ready(function() {
             var userName = $("#userName").val().trim();
             console.log("Welcome, " + userName + "!");
             $("#mainScreen").show();
+            $("#searchRow").show();
+            $("#videoRow").hide();
             $("#displayRow").hide();
             $("#startBox").hide();
             $("#logInModal").hide();
@@ -46,6 +48,7 @@ $(document).ready(function() {
         $('#submitBtn').on('click', function(e) {
             e.preventDefault();
             $("#displayRow").show();
+            $("#videoRow").show();
             $("#searchRow").hide();
             //ajax call
 
