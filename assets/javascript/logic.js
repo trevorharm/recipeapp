@@ -2,6 +2,7 @@ function reset() {
         $("mainScreen").show();
         $("#searchRow").show();
         $("#displayRow").hide();
+        $("#videoRow").hide();
     
 }
 
