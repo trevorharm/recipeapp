@@ -2,6 +2,8 @@
 var nut = "";
 $( ".filter" ).each(function(item) {
     var box = $(this);
+    var m = $(this.val);
+    console.log(m);
     if (box.checked){
         var f = box.data("health");
         nut += "&health=" + f;
