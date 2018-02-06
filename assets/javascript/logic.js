@@ -1,3 +1,10 @@
+function reset() {
+        $("mainScreen").show();
+        $("#searchRow").show();
+        $("#displayRow").hide();
+    
+}
+
 $(document).ready(function() {
     
     
@@ -29,6 +36,7 @@ $(document).ready(function() {
             var userName = $("#userName").val().trim();
             console.log("Welcome, " + userName + "!");
             $("#mainScreen").show();
+            $("#displayRow").hide();
             $("#startBox").hide();
             $("#logInModal").hide();
        });
@@ -37,7 +45,8 @@ $(document).ready(function() {
        // 
         $('#submitBtn').on('click', function(e) {
             e.preventDefault();
-
+            $("#displayRow").show();
+            $("#searchRow").hide();
             //ajax call
 
             console.log(ingredient.val());
@@ -54,7 +63,7 @@ $(document).ready(function() {
             //append div to display
             $('#recipe-display').append(wellDiv);
             //append recipe image
-            
+            $("#reset").on("click", reset);
     
         });
     

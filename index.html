@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--bootstrap link-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="../recipeappDev/assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="../recipeapp/assets/css/style.css" type="text/css">
     
        
     <title>Recipe App</title>
@@ -56,7 +56,7 @@
    
    
     <!--======================================= RECIPE DISPLAY==============================-->
-    <div class="row">
+    <div class="row" id ="displayRow">
         <div class="col-lg-12">
             <div class="panel panel-default">
                     <div class="panel-heading">
@@ -71,7 +71,7 @@
                             <h5>ingredients</h5>
 
                         </div>
-                                            
+                        <button class="btn btn-danger" id="reset">Reset</button>                    
                     </div>   
             </div> 
         </div>
@@ -81,7 +81,7 @@
 
  <!-- =================================== SEARCH PANEL =====================================-->
     
-    <div class="row">
+    <div class="row" id="searchRow">
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -96,7 +96,7 @@
                         <!-- checkboxes... add data-health to sort with health values? -->
                         <div class="col-lg-6">
                             <div class="checkbox filter">
-                                <label><input type="checkbox" value="highProtein" data-health="protein">High Protein</label>
+                                <label><input type="checkbox" value="shellfish" data-health="shellfish-free">Shellfish Free</label>
                             </div>
                             <div class="checkbox filter">
                                 <label><input type="checkbox" value="paleo" data-health="paleo">Paleo</label>
@@ -144,10 +144,10 @@
 <!-- scripts for ajax, firebase, and javascript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>        
 <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
-<!-- <script src="../recipeappDev/assets/javascript/logic.js"></script> -->
-<!-- <script src="../recipeappDev/assets/javascript/logic-ajax.js"></script> -->
-<!-- <script src="../recipeappDev/assets/javascript/logic-firebase.js"></script> -->
-<script src="../recipeappDev/assets/javascript/logic-login.js"></script>
+<script src="../recipeapp/assets/javascript/logic.js"></script>
+<!-- <script src="../recipeapp/assets/javascript/logic-ajax.js"></script> -->
+<!-- <script src="../recipeapp/assets/javascript/logic-firebase.js"></script> -->
+
 </body>
 
 </html>
