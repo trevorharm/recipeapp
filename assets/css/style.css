@@ -14,7 +14,7 @@ body {
 
 #mainScreen .jumbotron {
     background-image: url("../images/grill2.jpg");
-    height: 300px;
+    height: 275px;
     background-size: cover;
     background-position: bottom;
     opacity: 1;
@@ -41,13 +41,10 @@ body {
 }
 
 
-
 .jumbotron h1 {
     text-align: center;
 
 }
-
-
 
 
 h1, h4 {
@@ -113,7 +110,13 @@ h1, h4 {
     margin:15px 0 15px 0;
 }
 
+#videoRow .panel-body {
+    height: 500px;
+}
 
+iframe {
+    border: 5px solid black;
+}
 
 .userLabel {
    font-size: 25px;
@@ -130,8 +133,11 @@ h1, h4 {
 }
 
 @media (max-width:798px) {
+    #startBox h1 {
+        font-size: 75px;
+    }
     #logInModal {
-
+        max-width: 100%;
     }
 }
 
