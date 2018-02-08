@@ -28,12 +28,15 @@ $.ajax({url: urlSearch, success: function(response){
         var title = dataFood.label;
         var img = dataFood.image;
         var txt = dataFood.healthLabels;
+        var link = dataFood.url;
 
-        console.log(title);
+
+        console.log(link);
         var textnode = $("<p>");
         $(textnode).append(title);
         textnode.addClass("entry");
         textnode.css('background-image', 'url(' + img + ')');
+        $(textnode).attr('href', link);
 
         $("body").append(textnode);
         txt.forEach(element => {
@@ -46,20 +49,6 @@ $.ajax({url: urlSearch, success: function(response){
        
         
     }
-    // results.forEach(element => {
-    //     var x = element.index;
-    //     if (x < 5){
-    //     var title = element.recipe.label;
-    //     var img = element.recipe.image;
-
-    //     console.log(title);
-    //     var textnode = $("<p>");
-    //     $(textnode).append(title);
-    //     textnode.addClass("entry");
-    //     textnode.css('background-image', 'url(' + img + ')');
-    //     $("body").append(textnode);
-    //     }
-    // });
     
 }});
 

@@ -45,8 +45,8 @@ $(document).ready(function() {
        // 
         $('#submitBtn').on('click', function(e) {
             e.preventDefault();
+             $("#videoRow").show();
             $("#displayRow").show();
-            $("#videoRow").show();
             $("#searchRow").hide();
             //ajax call
 

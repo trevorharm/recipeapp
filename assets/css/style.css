@@ -13,6 +13,14 @@ body {
     border: none;
 }
 
+#mainScreen .jumbotron {
+    background-image: url("../images/grill2.jpg");
+    height: 275px;
+    background-size: cover;
+    background-position: bottom;
+    opacity: 1;
+}
+
 #mainScreen, #logInModal, #resultDisplay {
     display: none;
 }
@@ -22,10 +30,26 @@ body {
     
 }
 
+<<<<<<< HEAD
 .entry {
     clear: both;
     height: 300px;
     width: 400px;
+=======
+.panel-body {
+    
+    background-size: cover;
+}
+
+#startBox h1 {
+    padding-bottom: 40px;
+    font-size: 90px;
+    text-shadow: 4px 4px 4px rgba(117, 117, 117, 0.692);
+}
+
+
+.jumbotron h1 {
+>>>>>>> 3e1b5cab7987fc6663db82e6a2881f00ebf84261
     text-align: center;
     font-size: 550%;
     color: white;
@@ -37,6 +61,7 @@ body {
     font-weight: bold;
 }
 
+<<<<<<< HEAD
 .desc {
     font-size: 150%;
     height: 50px;
@@ -49,6 +74,8 @@ body {
     align-items: center;
 }
 
+=======
+>>>>>>> 3e1b5cab7987fc6663db82e6a2881f00ebf84261
 
 h1, h4 {
     font-weight: bold;
@@ -113,7 +140,13 @@ h1, h4 {
     margin:15px 0 15px 0;
 }
 
+#videoRow .panel-body {
+    height: 500px;
+}
 
+iframe {
+    border: 5px solid black;
+}
 
 .userLabel {
    font-size: 25px;
@@ -126,11 +159,15 @@ h1, h4 {
 
 .checkbox label, .panel-title {
     font-weight: bold;
+    font-size: 18px;
 }
 
 @media (max-width:798px) {
+    #startBox h1 {
+        font-size: 75px;
+    }
     #logInModal {
-
+        max-width: 100%;
     }
 }
 
