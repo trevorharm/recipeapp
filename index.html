@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--bootstrap link-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="../recipeapp/assets/css/style.css" type="text/css">
-
-
+    <!--bootstrap, jquery, firebase links-->
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script  src="http://parsleyjs.org/dist/parsley.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../recipeapp/assets/css/style.css" type="text/css">  
     <title>Recipe App</title>
 
 
@@ -22,7 +23,7 @@
     <!--================================ START BOX ======================================-->
     <div class="container" id="startBox">
         <div class="jumbotron">
-            <h1>RecipeApp:</h1>
+            <h1>RecipeApp</h1>
             <button class="btn btn-danger center-block" id="logInBtn">Log In</button>
         </div>
     </div>
@@ -36,14 +37,14 @@
             <div class="modal-content">
                 <div class="modal-header jumbotron">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Log In Page:</h4>
+                    <h4 class="modal-title">User Log In   <span class = "glyphicon glyphicon-user"></span></h4>
                 </div>
 
                 <form class="modal-body">
-                    <label for="userName" id="userLabel">
-                        <b>username:</b>
+                    <label for="userName" class="userLabel">
+                        <b>user email :</b>
                     </label>
-                    <input type="text" class="form-control" placeholder="Enter Username" id="userName" required>
+                    <input type="text" class="form-control" placeholder="Enter Email Adress" id="userName" required>
 
                     <button type="submit" class="btn btn-danger" id="logInSubmit">Login</button>
                 </form>
@@ -54,15 +55,15 @@
 
 
     <!--======================================== MAIN SCREEN ===================================-->
-    <div class="container" id="mainScreen">
-        <div class="jumbotron">
-            <h1>Recipe App:</h1>
-        </div>
+<div class="container" id="mainScreen">
+    <div class="jumbotron">
+        <h1>Recipe App:</h1>
+    </div>
 
 
         <!--======================================= RECIPE DISPLAY==============================-->
         <div class="row" id="displayRow">
-            <div class="col-lg-12">
+            <div class="col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Recipe Results</h3>
@@ -70,7 +71,7 @@
                     <div class="panel-body">
 
                         <div class="well" id="recipe-display">
-                            <img src="http://via.placeholder.com/150x150" class="thumbnail">
+                            <img src="/videos/53715392/pictures/371174905" class="thumbnail">
                             <h3>Recipe Name:</h3>
                             <h5>Details about the recipe</h5>
                             <h5>ingredients</h5>
@@ -84,72 +85,81 @@
 
         </div>
 
-        <!-- =================================== SEARCH PANEL =====================================-->
-
-        <div class="row" id="searchRow">
-            <div class="col-lg-12">
+    
+    
+        <!-- =================================== VIDEO PANEL =====================================-->
+        <div class="row" id="videoRow">
+            <div class="col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Pick an Ingredient</h3>
-                    </div>
+                        <h3 class="panel-title">Video Results <span class="glyphicon glyphicon-film"></span></h3>
+                    </div> 
                     <div class="panel-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="ingredient">Ingredient:</label>
-                                <input type="text" class="form-control" id="ingredient">
+                        
+                        <div class="well embed-responsive embed-responsive-16by9" id="video-display">
+                            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/53715392?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0\" width=\"1280\" height=\"720\" frameborder=\"0\" title=\"How to Make Chicken Tacos - A Visual Recipe\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            <h3>Video</h3>
+                        
+                        </div>
+                                        
+                    </div>   
+                </div>
+            </div>
+        </div>
+
+
+        <!-- =================================== SEARCH PANEL =====================================-->
+    
+    <div class="row" id="searchRow">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Pick an Ingredient</h3>
+                </div> 
+                <div class="panel-body">
+                    <form data-parsley-validate>
+                        <div class="form-group">
+                            <label for="ingredient">Ingredient:</label>
+                            <input type="text" class="form-control" id="ingredient">
+                        </div>
+                        <!-- checkboxes... add data-health to sort with health values? -->
+                        <div class="col-xs-6">
+                            <div class="checkbox filter">
+                                <label><input class="filter" type="checkbox" data-f="diet" data-n="shellfish-free">Balanced</label>
                             </div>
-                            <!-- checkboxes... add data-health to sort with health values? -->
-                            <div class="col-lg-6">
-                                <div class="checkbox filter">
-                                    <label>
-                                        <input type="checkbox" value="shellfish" data-health="shellfish-free">Shellfish Free</label>
-                                </div>
-                                <div class="checkbox filter">
-                                    <label>
-                                        <input type="checkbox" value="paleo" data-health="paleo">Paleo</label>
-                                </div>
-                                <div class="checkbox filter">
-                                    <label>
-                                        <input type="checkbox" value="lowCarb">Low Carb</label>
-                                </div>
-                                <div class="checkbox filter">
-                                    <label>
-                                        <input type="checkbox" value="nutAllergy">Nut Allergy</label>
-                                </div>
-                                <div class="checkbox filter">
-                                    <label>
-                                        <input type="checkbox" value="glutenFree">Gluten Free</label>
-                                </div>
+                            <div class="checkbox filter">
+                                <label><input  class="filter" type="checkbox" data-f="diet" data-n="high-protein">High Protein</label>
                             </div>
-
-                            <div class="col-lg-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="dairyAllergy">Dairy Allergy</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="pnutAllergy">Peanut Allergy</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="treenutAllergy">Treenut Allergy</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="vegan">Vegan</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="vegetarian">Vegetarian</label>
-                                </div>
+                            <div class="checkbox filter">
+                                <label><input  class="filter" type="checkbox" data-f="diet"  data-n="low-fat">Low Fat</label>
                             </div>
-
-
-                            <button type="submit" class="btn btn-default" id="submitBtn">Submit</button>
-
-                        </form>
-                    </div>
+                            <div class="checkbox filter">
+                                <label><input  class="filter" type="checkbox" data-f="health" data-n="alcohol-free">Alcohol Free</label>
+                            </div>
+                            <div class="checkbox filter">
+                                <label><input  class="filter" type="checkbox" data-f="diet" data-n="low-carb">Low Carb</label>
+                            </div>
+                        </div>    
+                        
+                        <div class="col-xs-6">
+                            <div class="checkbox">
+                                <label><input  class="filter" type="checkbox" data-f="health" data-n="sugar-conscious">Sugar Conscious</label>
+                            </div>  
+                            <div class="checkbox">
+                                <label><input  class="filter" type="checkbox" data-f="peanut-free" data-n="peanut-free">Peanut Allergy</label>
+                            </div>
+                            <div class="checkbox filter">
+                                    <label><input  class="filter" type="checkbox" data-f="health" data-n="tree-nut-free">Tree Nut Allergy</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input  class="filter" type="checkbox" data-f="health" data-n="vegan">Vegan</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input  class="filter" type="checkbox" data-f="health" data-n="vegetarian">Vegetarian</label>
+                            </div>   
+                        </div>
+                    </form>
+                 <button type="submit" class="btn btn-danger" id="submitBtn">Submit</button>
                 </div>
             </div>
         </div>
@@ -168,5 +178,11 @@
     <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
     <script src="assets/javascript/logic-youtube.js"></script>
 </body>
+
+ <!-- asset links -->
+ 
+ <script src="../recipeapp/assets/javascript/logic.js"></script>
+ <script src="../recipeapp/assets/javascript/logic-ajax.js"></script> 
+ <script src="../recipeapp/assets/javascript/logic-firebase.js"></script>
 
 </html>

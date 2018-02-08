@@ -3,13 +3,22 @@ body {
     background-size: 200px;
     background-repeat: none;
 }
-#resultDisplay{
+
+#startBox .jumbotron {
+    background-image: url("../images/salad2.jpg");
+    background-size:cover;
+    background-position: bottom;
+    height: 450px;
+    opacity: 1;
+    border: none;
+}
+
+#mainScreen, #logInModal, #resultDisplay {
     display: none;
 }
 
-img {
-    float: left;
-    margin-right: 15px;
+#startBox {
+    margin-top: 40px;
     
 }
 
@@ -51,36 +60,41 @@ h1, h4 {
     border: 3px solid red;
 }
 
-
+.form-control input {
+    margin-bottom: 15px;
+}
 
 .panel .panel-heading, .jumbotron {
     background-color: red;
     color: white;
     border: 4px solid darkred;
+    opacity: .8;
     
 }
 
 
-
+.panel  {
+    opacity: .9;
+}
 
 .panel-body {
     border-left: 3px solid darkred;
     border-right: 3px solid darkred;
     border-bottom: 3px solid darkred;
     color: red;
+    
 }
 
-.form-control:focus {
+.form-control:focus, .filter:focus {
     border-color: darkred;
     box-shadow: 0 0 8px red;
 }
 
 
 
-
 #logInBtn {
     width:400px;
-    height:100px;
+    height:150px;
     font-weight: bold;
     font-size: 35px;
 }
@@ -88,6 +102,7 @@ h1, h4 {
 #logInModal {
     height: 500px;
     width: 800px;
+    opacity: .9;
 }
 
 
@@ -100,9 +115,59 @@ h1, h4 {
 
 
 
-#userLabel {
-   font-size: 20px;
+.userLabel {
+   font-size: 25px;
    padding-left: 10px;
-   border-left: 3px solid red;
+   border-left: 4px solid red;
+   text-shadow: 2px 2px 2px lightslategray;
    margin-bottom: 15px;
+  
 }
+
+.checkbox label, .panel-title {
+    font-weight: bold;
+}
+
+@media (max-width:798px) {
+    #logInModal {
+
+    }
+}
+
+
+
+/*==================================================================================================
+
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+  color: #468847;
+  background-color: #DFF0D8;
+  border: 1px solid #D6E9C6;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  color: #B94A48;
+  background-color: #F2DEDE;
+  border: 1px solid #EED3D7;
+}
+
+.parsley-errors-list {
+  margin: 2px 0 3px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  opacity: 0;
+
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+
+.parsley-errors-list.filled {
+  opacity: 1;
+}*/
