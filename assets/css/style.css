@@ -30,12 +30,12 @@ body {
     
 }
 
-<<<<<<< HEAD
 .entry {
     clear: both;
     height: 300px;
     width: 400px;
-=======
+}
+
 .panel-body {
     
     background-size: cover;
@@ -49,7 +49,6 @@ body {
 
 
 .jumbotron h1 {
->>>>>>> 3e1b5cab7987fc6663db82e6a2881f00ebf84261
     text-align: center;
     font-size: 550%;
     color: white;
@@ -61,7 +60,6 @@ body {
     font-weight: bold;
 }
 
-<<<<<<< HEAD
 .desc {
     font-size: 150%;
     height: 50px;
@@ -74,8 +72,6 @@ body {
     align-items: center;
 }
 
-=======
->>>>>>> 3e1b5cab7987fc6663db82e6a2881f00ebf84261
 
 h1, h4 {
     font-weight: bold;
