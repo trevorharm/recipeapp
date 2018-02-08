@@ -2,17 +2,37 @@ body {
     background-image: url("../images/background-1.jpeg");
     
 }
-#resultDisplay{
-    display: none;
+
+#startBox .jumbotron {
+    background-image: url("../images/salad2.jpg");
+    background-size:cover;
+    background-position: bottom;
+    height: 450px;
+    opacity: 1;
+    border: none;
 }
 
-#mainScreen, #logInModal {
+#mainScreen, #logInModal, #resultDisplay {
     display: none;
 }
 
 #startBox {
     margin-top: 40px;
+    
 }
+
+.panel-body {
+    
+    background-size: cover;
+}
+
+#startBox h1 {
+    padding-bottom: 40px;
+    font-size: 90px;
+    text-shadow: 4px 4px 4px rgba(117, 117, 117, 0.692);
+}
+
+
 
 .jumbotron h1 {
     text-align: center;
@@ -45,13 +65,16 @@ h1, h4 {
 }
 
 
-
+.panel  {
+    opacity: .9;
+}
 
 .panel-body {
     border-left: 3px solid darkred;
     border-right: 3px solid darkred;
     border-bottom: 3px solid darkred;
     color: red;
+    
 }
 
 .form-control:focus, .filter:focus {
@@ -63,7 +86,7 @@ h1, h4 {
 
 #logInBtn {
     width:400px;
-    height:100px;
+    height:150px;
     font-weight: bold;
     font-size: 35px;
 }
@@ -71,6 +94,7 @@ h1, h4 {
 #logInModal {
     height: 500px;
     width: 800px;
+    opacity: .9;
 }
 
 
@@ -94,6 +118,12 @@ h1, h4 {
 
 .checkbox label, .panel-title {
     font-weight: bold;
+}
+
+@media (max-width:798px) {
+    #logInModal {
+
+    }
 }
 
 
