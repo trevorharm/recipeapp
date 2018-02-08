@@ -7,13 +7,10 @@ function reset() {
 }
 
 $(document).ready(function() {
-    
+           
     
         var ingredient = $('#ingredient');
         
-        
-        $("#mainScreen").hide();
-        $("#logInModal").hide();
         $("startBox").show();
         
         
