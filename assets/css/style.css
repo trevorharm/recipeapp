@@ -12,6 +12,14 @@ body {
     border: none;
 }
 
+#mainScreen .jumbotron {
+    background-image: url("../images/grill2.jpg");
+    height: 300px;
+    background-size: cover;
+    background-position: bottom;
+    opacity: 1;
+}
+
 #mainScreen, #logInModal, #resultDisplay {
     display: none;
 }
@@ -118,6 +126,7 @@ h1, h4 {
 
 .checkbox label, .panel-title {
     font-weight: bold;
+    font-size: 18px;
 }
 
 @media (max-width:798px) {
