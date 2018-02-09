@@ -18,7 +18,7 @@ $(document).ready(function() {
             console.log("clicked");
             $("#startBox").hide();
             $("#logInModal").show();
-           
+        //    $('#myForm').validator('update');
        }); 
        
        
@@ -31,8 +31,8 @@ $(document).ready(function() {
        
        $("#logInSubmit").on("click", function(e) {
             e.preventDefault();
-            var userName = $("#userName").val().trim();
-            console.log("Welcome, " + userName + "!");
+            var email = $("#inputEmail").val().trim();
+            console.log("Welcome, " + email + "!");
             $("#mainScreen").show();
             $("#searchRow").show();
             $("#videoRow").hide();
