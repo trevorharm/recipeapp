@@ -1,6 +1,8 @@
 body {
     background-image: url("../images/background-1.jpeg");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     
 }
 
@@ -48,10 +50,11 @@ body {
 #startBox h1 {
     margin-bottom: 40px;
     font-size: 90px;
-    text-shadow: 5px 5px 5px rgba(117, 117, 117, 0.692);
+    text-shadow: 8px 4px 2px rgba(117, 117, 117, 0.692);
     border: 8px double white;
-    width: 500px;
+    width: 560px;
     text-align: center;
+    padding: 20px;
 }
 
 
@@ -92,6 +95,11 @@ h1, h4 {
 .well {
     height: 200px;
     border: 3px solid blue;
+}
+
+.close:hover {
+    font-size: 125%;
+    color: hotpink;
 }
 
 .form-control input {
@@ -183,5 +191,18 @@ h1, h4 {
     
     #logInModal, #starBox, #startBox h1,  #mainScreen, #logInBtn {
         max-width: 100%;
+    }
+    #logInBtn {
+        height: 100px;
+    }
+}
+
+@media (max-width:407px) {
+    #logInBtn, #startBox h1 {
+        height: 90px;
+        width: 90%;
+    }
+    #startBox h1 {
+        font-size: 30px;
     }
 }
