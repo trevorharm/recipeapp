@@ -1,5 +1,6 @@
 body {
     background-image: url("../images/background-1.jpeg");
+    background-size: cover;
     
 }
 
@@ -34,6 +35,12 @@ body {
     margin-top: 40px;
 }
 
+.entry {
+    clear: both;
+    height: 300px;
+    width: 400px;
+}
+
 .panel-body {
     background-size: cover;
 }
@@ -51,7 +58,28 @@ body {
 .jumbotron h1 {
     text-align: center;
     font-size: 90px;
+    
+    color: white;
 
+    /*  
+    background-repeat: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;*/
+}
+
+.desc {
+    font-size: 150%;
+    height: 50px;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
