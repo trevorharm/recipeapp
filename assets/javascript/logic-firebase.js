@@ -21,30 +21,16 @@ var config = {
     $("#signUpSubmit").on("click", function(event) {
         event.preventDefault();
         email = $("#signUpEmail").val().trim();
-        // console.log(email);
         convertedEmail = email.replace(".", ",");
-        // console.log(convertedEmail);
         database.ref("/users").once("value", function(snapshot) {
             if (snapshot.child(convertedEmail).exists()) {
                 alert("That username is taken!");
-<<<<<<< HEAD
-                //  reset();
-=======
-                //reset();
->>>>>>> 3a1de9c356a090e6460b76863da72789c0af2fba
                 var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
                 var parseJSON = JSON.parse(stringJSON);
                 var newObj = parseJSON;
                 console.log(newObj);
-                // console.log(newObj.ingredients);
-                // console.log(newObj.recipes);
-                // console.log(newObj.videos);
             } else {
                 alert("There are no users with that email!");
-<<<<<<< HEAD
-                // reset();
-=======
->>>>>>> 3a1de9c356a090e6460b76863da72789c0af2fba
             }
         }, function(errorObject) {
             console.log("The read failed: " + errorObject.code);
@@ -54,31 +40,31 @@ var config = {
     $("#logInSubmit").on("click", function(event) {
         event.preventDefault();
         email = $("#inputEmail").val().trim();
-        // console.log(email);
         convertedEmail = email.replace(".", ",");
-        // console.log(convertedEmail);
         database.ref("/users").once("value", function(snapshot) {
             if (snapshot.child(convertedEmail).exists()) {
                 var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
                 var parseJSON = JSON.parse(stringJSON);
                 newObj = parseJSON;
                 console.log(newObj);
-                var text = " ";
+                var recipeText = " ";
+                var ingredientText = " ";
+                var videoText = " ";
                 var x;
                 var recipeArray = newObj.recipes;
                 var ingredientArray = newObj.ingredients;
                 var videoArray = newObj.videos;
                 for (x in recipeArray) {
-                    text += recipeArray[x] + " ";
-                    $("#favorites-display").html("<div>" + text + "</div>");
+                    recipeText = recipeArray[x] + " ";
+                    $("#favorites-display").append("<div>" + recipeText + "</div>");
                 }
                 for (x in ingredientArray) {
-                    text += ingredientArray[x] + " ";
-                    $("#favorites-display").html("<div>" + text + "</div>");
+                    ingredientText = ingredientArray[x] + " ";
+                    $("#favorites-display").append("<div>" + ingredientText + "</div>");
                 }
                 for (x in videoArray) {
-                    text += videoArray[x] + " ";
-                    $("#favorites-display").html("<div>" + text + "</div>");
+                    videoText = videoArray[x] + " ";
+                    $("#favorites-display").append("<div>" + videoText + "</div>");
                 }
             } else {
                 alert("There are no users with that email!");
@@ -107,15 +93,3 @@ var config = {
             // console.log(newObj.videos);
         })
     });
-
-    // $("#favoriteBtn").on("click", function(event) {
-    // event.preventDefault();
-    // newUser.recipe = results.hits[?]
-    // database.ref('users').push(newUser);
-    // });
-
-    // database.ref().on("child_added", function(childSnapshot) {
-    //     console.log(childSnapshot.val().newUser);
-    // }, function(errorObject) {
-    //     console.log("Errors handled: " + errorObject.code);
-    // });
