@@ -8,6 +8,7 @@ var signUp = $("#signUpEmail");
 
 
 //FUNCTIONS==================================================================================
+
 function valid() {
     var string = $("#inputEmail").val();
     if(string === "") {
@@ -43,6 +44,7 @@ function valid2() {
 }
 
 function reset() {
+
         $("mainScreen").show();
         $("#searchRow").show();
         $("#displayRow").hide();
@@ -62,21 +64,25 @@ function slideTime2() {
     setTimeout(function(){ $("#startBox").slideDown(); }, 500);
 }
 
+
+
+//MAIN PROCESSES/ ON PAGE LOAD==========================================================
 $(document).ready(function() {
+   
     var email;
-    var ingredient = $('#ingredient');
-    var input = $("#inputEmail");
-    var signUp = $("#signUpEmail");
+    //var ingredient = $('#ingredient');
+    //var input = $("#inputEmail");
+    //var signUp = $("#signUpEmail");
     
     
     $("#searchForm").submit(function(e){
         e.preventDefault();
     });
-           
         
-       
-    $("startBox").show();
-        //log in click event       
+    //$("startBox").show();
+        
+    
+    //log in click event       
     $("#logInBtn").on("click", function() {
         console.log("clicked");
         $("#startBox").slideUp();
@@ -86,17 +92,17 @@ $(document).ready(function() {
 
 
     $("#signUpBtn").on("click", function() {
-    console.log("clicked");
-    $("#startBox").slideUp();
-    signUpSlide();
-    valid2();                          
+        console.log("clicked");
+        $("#startBox").slideUp();
+        signUpSlide();
+        valid2();                          
     }); 
        
     //validates text on change and keyup
     input.on("change", valid);
     input.on("keyup", valid); 
-    signUp.on("change", valid);
-    signUp.on("keyup", valid);
+    signUp.on("change", valid2);
+    signUp.on("keyup", valid2);
       
     $(".close1").on("click", function() {
         $("#logInModal").slideUp();
