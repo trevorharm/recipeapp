@@ -14,6 +14,7 @@ var config = {
     var email = "";
     var convertedEmail = "";
     var ingredients = [];
+    var newIngredient = "";
     var recipes = ["How to", "2", "3", "4"];
     var videos = ["Vid"];
     var newObj;
@@ -76,20 +77,35 @@ var config = {
 
     $("#submitBtn").on("click", function(event) {
         event.preventDefault();
-        var newIngredient = $("#ingredient").val().trim();
-        ingredients.push(newIngredient);
-        database.ref("users/" + convertedEmail).set({
-            ingredients: ingredients,
-            recipes: recipes,
-            videos: videos
+        database.ref("/users").once("value", function(snapshot) {
+            if (snapshot.child(convertedEmail).exists()) {
+                var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
+                var parseJSON = JSON.parse(stringJSON);
+                newObj = parseJSON;
+                console.log(newObj);
+                var x;
+                var savedIngredient = " ";
+                var ingredientArray = newObj.ingredients;
+                for (x in ingredientArray) {
+                    savedIngredient = ingredientArray[x] + " ";
+                    ingredients.push(savedIngredient);
+                }
+                console.log(ingredients);
+            }
+            newIngredient = $("#ingredient").val().trim();
+            ingredients.push(newIngredient);
+            console.log(ingredients);
+            database.ref("users/" + convertedEmail).set({
+                ingredients: ingredients,
+                recipes: recipes,
+                videos: videos
+            });
         });
+
         database.ref("/users").once("value", function(snapshot) {
             var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
             var parseJSON = JSON.parse(stringJSON);
             newObj = parseJSON;
             console.log(newObj);
-            // console.log(newObj.ingredients);
-            // console.log(newObj.recipes);
-            // console.log(newObj.videos);
-        })
+        });
     });
