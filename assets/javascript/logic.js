@@ -127,22 +127,26 @@ $(document).ready(function() {
         console.log("Welcome, " + email + "!");
         $("#mainScreen").slideDown();
         $("#searchRow").slideDown();
-        $("#videoRow").hide();
-        $("#displayRow").hide();
+        $("#videoRow").slideDown();
+        $("#displayRow").slideDown();
+        //$("#videoRow").hide();
+        //$("#displayRow").hide();
         $("#startBox").hide();
         $("#logInModal").hide();
     });
 
     // sign up submission click event
     $("#signUpSubmit").on("click", function(e) {
-    e.preventDefault();
-    
-    let email = $("#signUpEmail").val().trim();
-    console.log("Welcome, " + email + "!");
-    $("#mainScreen").slideDown();
-    $("#searchRow").slideDown();
-    $("#startBox").hide();
-    $("#signUpModal").hide();
+        e.preventDefault();
+        
+        let email = $("#signUpEmail").val().trim();
+        console.log("Welcome, " + email + "!");
+        $("#mainScreen").slideDown();
+        $("#searchRow").slideDown();
+        //$("#videoRow").slideDown();
+        //$("#displayRow").slideDown();
+        $("#startBox").hide();
+        $("#signUpModal").hide();
     });
     
        
@@ -151,9 +155,9 @@ $(document).ready(function() {
         e.preventDefault();
         e.stopPropagation();
 
-            $("#videoRow").show();
+        $("#videoRow").show();
         $("#displayRow").show();
-        $("#searchRow").hide();
+        //$("#searchRow").hide();
         //ajax call
 
         console.log(ingredient.val());
