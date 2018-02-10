@@ -10,7 +10,7 @@ body {
     background-image: url("../images/salad2.jpg");
     background-size:cover;
     background-position: bottom;
-    height: 450px;
+    height: 525px;
     opacity: 1;
     border: 8px solid white;
     box-shadow: 0 0 8px white;
@@ -29,7 +29,7 @@ body {
 
 
 
-#mainScreen, #logInModal, #resultDisplay {
+#mainScreen, #logInModal, #signUpModal, #resultDisplay, #videoRow, #displayRow {
     display: none;
 }
 
@@ -131,9 +131,11 @@ h1, h4 {
     box-shadow: 0 0 8px blue;
 }
 
+.filter label:focus {
+    color: hotpink;
+}
 
-
-#logInBtn {
+#signUpBtn {
     width:400px;
     height:150px;
     font-weight: bold;
@@ -148,7 +150,26 @@ h1, h4 {
     opacity: .9;
 }
 
+#logInBtn {
+    position: relative;
+    top: 200px;
+    border: 2px solid white;
+    box-shadow: 0 0 8px blue;
+}
 
+.close1, .close2 {
+    border: none;
+    color: white;
+    float: right;
+    font-size: 33px;
+    font-weight: bold;
+    background-color: darkblue;
+    margin: 0;
+    height: 25px;
+    top: -15px;
+    position: relative;
+
+}
 
 #logInSubmit {
     font-weight: bold;
@@ -182,25 +203,31 @@ h1, h4 {
     }
 
     #startBox .jumbotron {
-        height: 350px;
+        height: 400px;
     }
 
     #mainScreen .jumbotron {
         height: 200px;
     }
     
-    #logInModal, #starBox, #startBox h1,  #mainScreen, #logInBtn {
+    #logInModal, #signUpModal, #starBox, #startBox h1,  #mainScreen, #logInBtn {
         max-width: 100%;
     }
-    #logInBtn {
+    #signUpBtn {
+        position: relative;
         height: 100px;
+        top:-50px;
+    }
+    #logInBtn {
+        top:100px;
     }
 }
 
 @media (max-width:407px) {
-    #logInBtn, #startBox h1 {
+    #signUpBtn, #startBox h1 {
         height: 90px;
         width: 90%;
+        
     }
     #startBox h1 {
         font-size: 30px;
