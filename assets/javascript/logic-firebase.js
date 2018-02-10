@@ -16,6 +16,7 @@ var config = {
     var ingredients = [];
     var recipes = ["How to"];
     var videos = ["Vid"];
+    var newObj;
 
     $("#signUpSubmit").on("click", function(event) {
         event.preventDefault();
@@ -53,7 +54,7 @@ var config = {
             if (snapshot.child(convertedEmail).exists()) {
                 var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
                 var parseJSON = JSON.parse(stringJSON);
-                var newObj = parseJSON;
+                newObj = parseJSON;
                 console.log(newObj);
                 console.log(newObj.ingredients);
                 console.log(newObj.recipes);
@@ -75,7 +76,9 @@ var config = {
             recipes: recipes,
             videos: videos
         });
-        // console.log(convertedEmail);
+        database.ref("/users").once("value", function(snapshot) {
+            console.log(newObj);
+        })
     });
 
     // $("#favoriteBtn").on("click", function(event) {
