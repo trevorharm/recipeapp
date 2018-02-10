@@ -61,9 +61,9 @@ var config = {
                 // console.log(newObj.videos);
                 console.log(newObj.recipes);
                 var recipeArray = newObj.recipes;
-                recipeArray.forEach(element => {
-                    $("#favorites-display").append("<p>" + element + "</p>");
-                });
+                // $(newObj).each(element => {
+                    $("#favorites-display").append(recipeArray);
+                // });
                 // for (i = 0; i < newObj.recipes.length; i++) {
                 //     $("#favorites-display").append(newObj.recipes[i]);
                 // };
