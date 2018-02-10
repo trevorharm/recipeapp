@@ -14,7 +14,7 @@ var config = {
     var email = "";
     var convertedEmail = "";
     var ingredients = [];
-    var recipes = ["How to"];
+    var recipes = ["How to", "2", "3", "4"];
     var videos = ["Vid"];
     var newObj;
 
@@ -58,6 +58,14 @@ var config = {
                 // console.log(newObj.ingredients);
                 // console.log(newObj.recipes);
                 // console.log(newObj.videos);
+                console.log(newObj.recipes);
+                var recipeArray = newObj.recipes;
+                recipeArray.forEach(element => {
+                    $("#favorites-display").append("<p>" + element + "</p>");
+                });
+                // for (i = 0; i < newObj.recipes.length; i++) {
+                //     $("#favorites-display").append(newObj.recipes[i]);
+                // };
             } else {
                 alert("There are no users with that email!");
             }
