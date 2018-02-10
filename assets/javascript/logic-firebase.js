@@ -16,6 +16,7 @@ var config = {
     var ingredients = [];
     var recipes = ["How to"];
     var videos = ["Vid"];
+    var newObj;
 
     $("#signUpSubmit").on("click", function(event) {
         event.preventDefault();
@@ -26,17 +27,16 @@ var config = {
         database.ref("/users").once("value", function(snapshot) {
             if (snapshot.child(convertedEmail).exists()) {
                 alert("That username is taken!");
+                // reset();
                 var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
                 var parseJSON = JSON.parse(stringJSON);
                 var newObj = parseJSON;
                 console.log(newObj);
-                console.log(newObj.ingredients);
-                console.log(newObj.recipes);
-                console.log(newObj.videos);
-                // $("#displayRow").show();
-                // $("#videoRow").show();
+                // console.log(newObj.ingredients);
+                // console.log(newObj.recipes);
+                // console.log(newObj.videos);
             } else {
-                console.log("Doesn't exist");
+                alert("There are no users with that email!");
             }
         }, function(errorObject) {
             console.log("The read failed: " + errorObject.code);
@@ -53,11 +53,11 @@ var config = {
             if (snapshot.child(convertedEmail).exists()) {
                 var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
                 var parseJSON = JSON.parse(stringJSON);
-                var newObj = parseJSON;
+                newObj = parseJSON;
                 console.log(newObj);
-                console.log(newObj.ingredients);
-                console.log(newObj.recipes);
-                console.log(newObj.videos);
+                // console.log(newObj.ingredients);
+                // console.log(newObj.recipes);
+                // console.log(newObj.videos);
             } else {
                 alert("There are no users with that email!");
             }
@@ -75,7 +75,15 @@ var config = {
             recipes: recipes,
             videos: videos
         });
-        // console.log(convertedEmail);
+        database.ref("/users").once("value", function(snapshot) {
+            var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
+            var parseJSON = JSON.parse(stringJSON);
+            newObj = parseJSON;
+            console.log(newObj);
+            // console.log(newObj.ingredients);
+            // console.log(newObj.recipes);
+            // console.log(newObj.videos);
+        })
     });
 
     // $("#favoriteBtn").on("click", function(event) {
