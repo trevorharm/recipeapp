@@ -44,12 +44,13 @@ function valid2() {
 }
 
 function reset() {
-
-        $("mainScreen").show();
-        $("#searchRow").show();
-        $("#displayRow").hide();
-        $("#videoRow").hide();
-    
+       
+    $("#displayRow").hide();
+    $("#videoRow").hide();
+    $("#logInModal").hide();
+    $("#signUpModal").hide();
+    $("mainScreen").show();
+    $("#searchRow").show();
 }
 
 function slideTime() {
@@ -119,7 +120,7 @@ $(document).ready(function() {
       
        
        
-      
+     //logging in================================================ 
     $("#logInSubmit").on("click", function(e) {
         e.preventDefault();
         
@@ -127,8 +128,9 @@ $(document).ready(function() {
         console.log("Welcome, " + email + "!");
         $("#mainScreen").slideDown();
         $("#searchRow").slideDown();
-        $("#videoRow").slideDown();
-        $("#displayRow").slideDown();
+        $("#favorites").slideDown();
+        //$("#videoRow").slideDown();
+        //$("#displayRow").slideDown();
         //$("#videoRow").hide();
         //$("#displayRow").hide();
         $("#startBox").hide();
@@ -150,7 +152,7 @@ $(document).ready(function() {
     });
     
        
-       
+    //LOGGED IN, SEARCH ======================================   
     $('#submitBtn').on('click', function(e) {
         e.preventDefault();
         e.stopPropagation();

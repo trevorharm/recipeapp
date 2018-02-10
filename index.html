@@ -88,11 +88,67 @@
     </div>
 
     <!--======================================== MAIN SCREEN ===================================-->
-<div class="container" id="mainScreen">
-    <div class="jumbotron">
-        <h1 class="center-block">Recipe App:</h1>
-    </div>
+    <div class="container" id="mainScreen">
+        <div class="jumbotron">
+            <h1 class="center-block">Recipe App:</h1>
+        </div>
 
+    <!-- =================================== SEARCH PANEL =====================================-->
+
+    <div class="row" id="searchRow">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Pick an Ingredient</h3>
+                </div> 
+                    <div class="panel-body">
+                        <form id="searchForm">
+                            <div class="form-group">
+                                <label for="ingredient">Ingredient:</label>
+                                <input type="text" class="form-control" id="ingredient">
+                            </div>
+                            <!-- checkboxes================================================================= -->
+                            <div class="col-xs-6">
+                                <div class="checkbox filter">
+                                    <label><input class="filter" type="checkbox" data-f="diet" data-n="shellfish-free">Balanced</label>
+                                </div>
+                                <div class="checkbox filter">
+                                    <label><input  class="filter" type="checkbox" data-f="diet" data-n="high-protein">High Protein</label>
+                                </div>
+                                <div class="checkbox filter">
+                                    <label><input  class="filter" type="checkbox" data-f="diet"  data-n="low-fat">Low Fat</label>
+                                </div>
+                                <div class="checkbox filter">
+                                    <label><input  class="filter" type="checkbox" data-f="health" data-n="alcohol-free">Alcohol Free</label>
+                                </div>
+                                <div class="checkbox filter">
+                                    <label><input  class="filter" type="checkbox" data-f="diet" data-n="low-carb">Low Carb</label>
+                                </div>
+                            </div>    
+                            
+                            <div class="col-xs-6">
+                                <div class="checkbox">
+                                    <label><input  class="filter" type="checkbox" data-f="health" data-n="sugar-conscious">Sugar Conscious</label>
+                                </div>  
+                                <div class="checkbox">
+                                    <label><input  class="filter" type="checkbox" data-f="peanut-free" data-n="peanut-free">Peanut Allergy</label>
+                                </div>
+                                <div class="checkbox filter">
+                                        <label><input  class="filter" type="checkbox" data-f="health" data-n="tree-nut-free">Tree Nut Allergy</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input  class="filter" type="checkbox" data-f="health" data-n="vegan">Vegan</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input  class="filter" type="checkbox" data-f="health" data-n="vegetarian">Vegetarian</label>
+                                </div>   
+                            </div>
+                        </form>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     
 
 
@@ -116,8 +172,25 @@
                     </div>
                 </div>
             </div>
+        </div>
 
+        <!--======================================= FAVORITES DISPLAY==============================-->
+        <div class="row" id="favorites">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Favorites</h3>
+                    </div>
+                    <div class="panel-body">
 
+                        <div class="well" id="favorites-display">
+                           
+
+                        </div>
+                        <button class="btn btn-primary" id="reset">Reset</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
     
@@ -141,65 +214,7 @@
                 </div>
             </div>
         </div>
-
-
-        <!-- =================================== SEARCH PANEL =====================================-->
-    
-    <div class="row" id="searchRow">
-        <div class="col-xs-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Pick an Ingredient</h3>
-                </div> 
-                <div class="panel-body">
-                    <form id="searchForm">
-                        <div class="form-group">
-                            <label for="ingredient">Ingredient:</label>
-                            <input type="text" class="form-control" id="ingredient">
-                        </div>
-                        <!-- checkboxes================================================================= -->
-                        <div class="col-xs-6">
-                            <div class="checkbox filter">
-                                <label><input class="filter" type="checkbox" data-f="diet" data-n="shellfish-free">Balanced</label>
-                            </div>
-                            <div class="checkbox filter">
-                                <label><input  class="filter" type="checkbox" data-f="diet" data-n="high-protein">High Protein</label>
-                            </div>
-                            <div class="checkbox filter">
-                                <label><input  class="filter" type="checkbox" data-f="diet"  data-n="low-fat">Low Fat</label>
-                            </div>
-                            <div class="checkbox filter">
-                                <label><input  class="filter" type="checkbox" data-f="health" data-n="alcohol-free">Alcohol Free</label>
-                            </div>
-                            <div class="checkbox filter">
-                                <label><input  class="filter" type="checkbox" data-f="diet" data-n="low-carb">Low Carb</label>
-                            </div>
-                        </div>    
-                        
-                        <div class="col-xs-6">
-                            <div class="checkbox">
-                                <label><input  class="filter" type="checkbox" data-f="health" data-n="sugar-conscious">Sugar Conscious</label>
-                            </div>  
-                            <div class="checkbox">
-                                <label><input  class="filter" type="checkbox" data-f="peanut-free" data-n="peanut-free">Peanut Allergy</label>
-                            </div>
-                            <div class="checkbox filter">
-                                    <label><input  class="filter" type="checkbox" data-f="health" data-n="tree-nut-free">Tree Nut Allergy</label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input  class="filter" type="checkbox" data-f="health" data-n="vegan">Vegan</label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input  class="filter" type="checkbox" data-f="health" data-n="vegetarian">Vegetarian</label>
-                            </div>   
-                        </div>
-                    </form>
-                 <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>    
+    </div> <!-- ======== main container div ========== -->
 
 
 </body>
