@@ -27,7 +27,7 @@ var config = {
         database.ref("/users").once("value", function(snapshot) {
             if (snapshot.child(convertedEmail).exists()) {
                 alert("That username is taken!");
-                // reset();
+                 reset();
                 var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
                 var parseJSON = JSON.parse(stringJSON);
                 var newObj = parseJSON;
@@ -37,6 +37,7 @@ var config = {
                 // console.log(newObj.videos);
             } else {
                 alert("There are no users with that email!");
+                reset();
             }
         }, function(errorObject) {
             console.log("The read failed: " + errorObject.code);

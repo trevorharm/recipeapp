@@ -61,12 +61,14 @@ var key2 = "&access_token=f54cc8963e206b7972d91dd2d9c17cd8";
 var vidSearch = api2 + search2 + key2;
 $.ajax({url: vidSearch, success: function(response){
     console.log(response);
-    var y = response.data.length;
     for (var i =0; i< 9; i++)
     {
-        var x = Math.random(0, y);
+        var y = response.data.length;
+        var x = Math.floor(Math.random(0, y));
         var recipex = response.data[x];
-        $("body").append(recipex.embed.html);
+        var name = recipex.name;
+        console.log(name);
+       // $("body").append(recipex.embed.html);
     }
 }});
 }

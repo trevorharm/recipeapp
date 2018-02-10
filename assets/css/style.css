@@ -39,8 +39,8 @@ body {
 
 .entry {
     float: left;
-    height: 175px;
-    width: 225px;
+    height: 200px;
+    width: 275px;
     font-size: 200%;
     background-repeat: none;
     display: flex;
@@ -96,7 +96,7 @@ h1, h4 {
 }
 
 .well {
-    height: 200px;
+   
     border: 3px solid blue;
 }
 
