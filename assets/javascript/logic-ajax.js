@@ -35,12 +35,19 @@ $.ajax({url: urlSearch, success: function(response){
         var column = $("<div>");
         column.addClass("col-xs-4");
         var textnode = $("<a>");
+        //favorite button
+        var favBtn = $("<button>");
+        favBtn.addClass("btn btn-primary favorite");
+        favBtn.attr("id", "button-" + i);
+        favBtn.html("<span class='glyphicon glyphicon-star'></span>");
+        
         $(textnode).append(title);
         textnode.addClass("entry");
         textnode.css('background-image', 'url(' + img + ')');
         textnode.attr("href", link);
         textnode.attr("target", "_blank");
         $(column).append(textnode);
+        $(column).append(favBtn);
         $("#recipe-display").append(column);
         txt.forEach(element => {
             var contains = $("<p>");
