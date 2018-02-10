@@ -12,21 +12,28 @@ var config = {
     var database = firebase.database();
 
     var userName = "";
-
+    var email = "";
     var ingredients = [];
-    var recipes = [];
-    var videos = [];
+    var recipes = ["How to"];
+    var videos = ["Vid"];
+    var s = "";
 
     $("#logInSubmit").on("click", function(event) {
         event.preventDefault();
-        userName = $("#userName").val().trim();
-        console.log(userName);
+        email = $("#inputEmail").val();
+        console.log(email);
+        // var r = "example@user.com";
+        // var r = JSON.stringify(userName);
+        // console.log(r);
+        // console.log(userName);
+        s = email.replace(".", ",");
+        console.log(s);
         database.ref("/users").once("value", function(snapshot) {
-            if (snapshot.child(userName).exists()) {
+            if (snapshot.child(s).exists()) {
                 alert("That username is taken!");
                 // console.log(snapshot.child(userName));
                 // console.log(snapshot.val().userName.recipes);
-                var stringJSON = JSON.stringify(snapshot.child(userName));
+                var stringJSON = JSON.stringify(snapshot.child(s));
                 // console.log(stringJSON);
                 var parseJSON = JSON.parse(stringJSON);
                 // console.log(parseJSON);
@@ -51,11 +58,13 @@ var config = {
         var newIngredient = $("#ingredient").val().trim();
         ingredients.push(newIngredient);
     // console.log(ingredients);
-        database.ref("users/" + userName).set({
+        database.ref("users/" + s).set({
             ingredients: ingredients,
             recipes: recipes,
             videos: videos
         });
+        console.log(s);
+    
     });
 
     // $("#favoriteBtn").on("click", function(event) {
@@ -64,8 +73,8 @@ var config = {
     // database.ref('users').push(newUser);
     // });
 
-    database.ref().on("child_added", function(childSnapshot) {
-        console.log(childSnapshot.val().newUser);
-    }, function(errorObject) {
-        console.log("Errors handled: " + errorObject.code);
-    });
+    // database.ref().on("child_added", function(childSnapshot) {
+    //     console.log(childSnapshot.val().newUser);
+    // }, function(errorObject) {
+    //     console.log("Errors handled: " + errorObject.code);
+    // });// Initialize Firebase
