@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--bootstrap, jquery, firebase links-->
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../recipeapp/assets/css/style.css" type="text/css">  
+    <title>Recipe App</title>
+
+
+</head>
+
+<body>
+
+
+    <!--================================ START BOX ======================================-->
+    <div class="container" id="startBox">
+        <div class="jumbotron">
+            <h1>RecipeApp:</h1>
+            <button class="btn btn-danger center-block" id="logInBtn">Log In</button>
+        </div>
+    </div>
+
+
+    <!-- ================================== LOG IN MODAL ================================ -->
+    <div id="logInModal" class="modal center-block" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header jumbotron">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Log In Page:</h4>
+                </div>
+
+                <form class="modal-body">
+                    <label for="userName" id="userLabel">
+                        <b>username:</b>
+                    </label>
+                    <input type="text" class="form-control" placeholder="Enter Username" id="userName" required>
+
+                    <button type="submit" class="btn btn-danger" id="logInSubmit">Login</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--======================================== MAIN SCREEN ===================================-->
+    <div class="container" id="mainScreen">
+        <div class="jumbotron">
+            <h1>Recipe App:</h1>
+        </div>
+
+
+        <!--======================================= RECIPE DISPLAY==============================-->
+        <div class="row" id="displayRow">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Recipe Results</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="well" id="recipe-display">
+                            <img src="http://via.placeholder.com/150x150" class="thumbnail">
+                            <h3>Recipe Name:</h3>
+                            <h5>Details about the recipe</h5>
+                            <h5>ingredients</h5>
+
+                        </div>
+                        <button class="btn btn-danger" id="reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    
+    </div>
+ <!-- =================================== VIDEO PANEL =====================================-->
+<div class="row" id="videoRow">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Video Results</h3>
+            </div> 
+            <div class="panel-body">
+                
+                <div class="well" id="video-display">
+                    <a href="#"><img src="http://via.placeholder.com/150x150" class="thumbnail"></a>
+                    <h3>Video</h3>
+                  
+                </div>
+                                   
+            </div>   
+    </div>
+</div>
+
+
+ <!-- =================================== SEARCH PANEL =====================================-->
+    
+    <div class="row" id="searchRow">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Pick an Ingredient</h3>
+                </div> 
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="ingredient">Ingredient:</label>
+                            <input type="text" class="form-control" id="ingredient">
+                        </div>
+                        <!-- checkboxes... add data-health to sort with health values? -->
+                        <div class="col-lg-6">
+                            <div class="checkbox filter">
+                                <label><input class="filter" type="checkbox" data-f="diet" data-n="balanced">Balanced Diet</label>
+                            </div>
+                            <div class="checkbox filter">
+                                <label><input  class="filter" type="checkbox" data-f="diet" data-n="high-protein">High Protein</label>
+                            </div>
+                            <div class="checkbox filter">
+                                <label><input  class="filter" type="checkbox" data-f="diet"  data-n="low-fat">Egg Free</label>
+                            </div>
+                            <div class="checkbox filter">
+                                <label><input  class="filter" type="checkbox" data-f="health" data-n="tree-nut-free">Tree Nut Allergy</label>
+                            </div>
+                            <div class="checkbox filter">
+                                <label><input  class="filter" type="checkbox" value="glutenFree" data-health="gluten-free">Gluten Free</label>
+                            </div>
+
+                        <div class="col-lg-6">
+                            <div class="checkbox">
+                                <label><input  class="filter" type="checkbox" value="dairyFree" data-health="dairy-free">Dairy Allergy</label>
+                            </div>  
+                            <div class="checkbox">
+                                <label><input  class="filter" type="checkbox" value="pnutAllergy" data-health="peanut-free">Peanut Allergy</label>
+                            </div>
+                                <div class="checkbox">
+                            <label><input  class="filter" type="checkbox" value="pork-free" data-health="pork-free">Pork Free</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input  class="filter" type="checkbox" value="vegan" data-health="vegan">Vegan</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input  class="filter" type="checkbox" value="vegetarian" data-health="vegetarian">Vegetarian</label>
+                            </div>   
+                        </div>
+
+
+                            <button type="submit" class="btn btn-default" id="submitBtn">Submit</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+ 
+
+</body>
+
+ <!-- asset links -->
+ 
+ <script src="../recipeapp/assets/javascript/logic.js"></script>
+ <script src="../recipeapp/assets/javascript/logic-ajax.js"></script> 
+<script src="../recipeapp/assets/javascript/logic-firebase.js"></script>
+
+</html>
