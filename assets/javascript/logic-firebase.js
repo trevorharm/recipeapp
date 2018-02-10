@@ -27,7 +27,7 @@ var config = {
         database.ref("/users").once("value", function(snapshot) {
             if (snapshot.child(convertedEmail).exists()) {
                 alert("That username is taken!");
-                 reset();
+                //  reset();
                 var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
                 var parseJSON = JSON.parse(stringJSON);
                 var newObj = parseJSON;
@@ -37,7 +37,7 @@ var config = {
                 // console.log(newObj.videos);
             } else {
                 alert("There are no users with that email!");
-                reset();
+                // reset();
             }
         }, function(errorObject) {
             console.log("The read failed: " + errorObject.code);
@@ -56,17 +56,23 @@ var config = {
                 var parseJSON = JSON.parse(stringJSON);
                 newObj = parseJSON;
                 console.log(newObj);
-                // console.log(newObj.ingredients);
-                // console.log(newObj.recipes);
-                // console.log(newObj.videos);
-                console.log(newObj.recipes);
+                var text = " ";
+                var x;
                 var recipeArray = newObj.recipes;
-                // $(newObj).each(element => {
-                    $("#favorites-display").append(recipeArray);
-                // });
-                // for (i = 0; i < newObj.recipes.length; i++) {
-                //     $("#favorites-display").append(newObj.recipes[i]);
-                // };
+                var ingredientArray = newObj.ingredients;
+                var videoArray = newObj.videos;
+                for (x in recipeArray) {
+                    text += recipeArray[x] + " ";
+                    $("#favorites-display").html("<div>" + text + "</div>");
+                }
+                for (x in ingredientArray) {
+                    text += ingredientArray[x] + " ";
+                    $("#favorites-display").html("<div>" + text + "</div>");
+                }
+                for (x in videoArray) {
+                    text += videoArray[x] + " ";
+                    $("#favorites-display").html("<div>" + text + "</div>");
+                }
             } else {
                 alert("There are no users with that email!");
             }
