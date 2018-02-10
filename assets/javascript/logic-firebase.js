@@ -20,9 +20,9 @@ var config = {
     $("#signUpSubmit").on("click", function(event) {
         event.preventDefault();
         email = $("#signUpEmail").val().trim();
-        console.log(email);
+        // console.log(email);
         convertedEmail = email.replace(".", ",");
-        console.log(convertedEmail);
+        // console.log(convertedEmail);
         database.ref("/users").once("value", function(snapshot) {
             if (snapshot.child(convertedEmail).exists()) {
                 alert("That username is taken!");
@@ -40,7 +40,30 @@ var config = {
             }
         }, function(errorObject) {
             console.log("The read failed: " + errorObject.code);
-            });
+        });
+    });
+
+    $("#logInSubmit").on("click", function(event) {
+        event.preventDefault();
+        email = $("#inputEmail").val().trim();
+        // console.log(email);
+        convertedEmail = email.replace(".", ",");
+        // console.log(convertedEmail);
+        database.ref("/users").once("value", function(snapshot) {
+            if (snapshot.child(convertedEmail).exists()) {
+                var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
+                var parseJSON = JSON.parse(stringJSON);
+                var newObj = parseJSON;
+                console.log(newObj);
+                console.log(newObj.ingredients);
+                console.log(newObj.recipes);
+                console.log(newObj.videos);
+            } else {
+                alert("There are no users with that email!");
+            }
+        }, function(errorObject) {
+            console.log("The read failed: " + errorObject);
+        });
     });
 
     $("#submitBtn").on("click", function(event) {
@@ -52,7 +75,7 @@ var config = {
             recipes: recipes,
             videos: videos
         });
-        console.log(convertedEmail);
+        // console.log(convertedEmail);
     });
 
     // $("#favoriteBtn").on("click", function(event) {
