@@ -27,7 +27,11 @@ var config = {
         database.ref("/users").once("value", function(snapshot) {
             if (snapshot.child(convertedEmail).exists()) {
                 alert("That username is taken!");
+<<<<<<< HEAD
                 //  reset();
+=======
+                //reset();
+>>>>>>> 3a1de9c356a090e6460b76863da72789c0af2fba
                 var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
                 var parseJSON = JSON.parse(stringJSON);
                 var newObj = parseJSON;
@@ -37,7 +41,10 @@ var config = {
                 // console.log(newObj.videos);
             } else {
                 alert("There are no users with that email!");
+<<<<<<< HEAD
                 // reset();
+=======
+>>>>>>> 3a1de9c356a090e6460b76863da72789c0af2fba
             }
         }, function(errorObject) {
             console.log("The read failed: " + errorObject.code);
