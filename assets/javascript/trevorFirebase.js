@@ -24,13 +24,19 @@ $("#signUpSubmit").on("click", function (event) {
     convertedEmail = email.replace(".", ",");
     database.ref("/users").once("value", function (snapshot) {
         if (snapshot.child(convertedEmail).exists()) {
-            alert("That username is taken!");
             var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
             var parseJSON = JSON.parse(stringJSON);
             var newObj = parseJSON;
             console.log(newObj);
+            swal("That Email Address Is In Use. Please Use Login Option If Returning To Site.");
         } else {
-            alert("There are no users with that email!");
+            // alert("There are no users with that email!");
+            $("#mainScreen").slideDown();
+            $("#searchRow").slideDown();
+            // $("#favorites").slideDown();
+            // $("#videoRow").slideDown();
+            $("#startBox").hide();
+            $("#signUpModal").hide();
         }
     }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
