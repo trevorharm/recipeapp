@@ -530,27 +530,28 @@ $.ajax({url: vidSearch, success: function(response){
     for (var i =0; i< 9; i++)
     {
         var y = response.data.length;
-        console.log(y);
+        // console.log(y);
         //var x = Math.floor(Math.random(0, y));
         var x = Math.floor(Math.random() * Math.floor(y));
-        console.log(x);
+        // console.log(x);
         var recipex = response.data[x];
         var name = recipex.name;
         console.log(name);
         var vid = recipex.embed.html;
-        $(vid).addClass("foodvideo");
-        console.log(vid);
-        var column = $("<div>");
-        column.addClass("col-xs-4");
-        column.append(vid);
-       $("body").append(column);
-    }
-
         var vidBox = $("<div class='container video'>");
-        vidBox.html( recipex.embed.html);
+        vidBox.html(vid);
        $("#video-display").empty();
        $("#video-display").css("height", "400px");
        $("#video-display").append(vidBox);
+    //     $(vid).addClass("foodvideo");
+    //     console.log(vid);
+    //     var column = $("<div>");
+    //     column.addClass("col-xs-4");
+    //     column.append(vid);
+    //    $("body").append(column);
+    }
+
+        
             
    
 }});
