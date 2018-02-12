@@ -541,7 +541,7 @@ $.ajax({url: vidSearch, success: function(response){
         $(vid).attr("height","480");
         $(vid).attr("width","720");
         console.log(vid);
-       $("body").append(vid);
+       
     }
 
         var vidBox = $("<div class='container video'>");
