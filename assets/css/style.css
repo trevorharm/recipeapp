@@ -225,7 +225,10 @@ h1, h4 {
         top:100px;
     }
 }
-
+.foodvideo {
+    height: 480px;
+    width: 720px;
+}
 @media (max-width:407px) {
     #signUpBtn, #startBox h1 {
         height: 90px;

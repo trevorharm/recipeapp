@@ -79,10 +79,12 @@ $.ajax({url: vidSearch, success: function(response){
         var name = recipex.name;
         console.log(name);
         var vid = recipex.embed.html;
-        $(vid).attr("height","480");
-        $(vid).attr("width","720");
+        $(vid).addClass("foodvideo");
         console.log(vid);
-       $("body").append(vid);
+        var column = $("<div>");
+        column.addClass("col-xs-4");
+        column.append(vid);
+       $("body").append(column);
     }
 }});
 }
