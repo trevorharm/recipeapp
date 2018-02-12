@@ -103,7 +103,6 @@ $.ajax({url: urlSearch, success: function(response){
             console.log("The read failed: " + errorObject);
         });
         var y = $(this).data("num");
-        console.log(y);
         console.log(results[y].recipe.url);
         recipes.push(results[y].recipe.url);
         $("#favorites-display").val(" ");
@@ -120,7 +119,7 @@ $.ajax({url: urlSearch, success: function(response){
     
     }
 else {
-    console.log("failure");
+    swal("No recipes found for " + search +"!");
 }
 }});
 function getVideo(term){
