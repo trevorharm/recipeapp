@@ -225,4 +225,20 @@
  <script src="../recipeapp/assets/javascript/logic-ajax.js"></script> 
  <script src="../recipeapp/assets/javascript/logic-firebase.js"></script>
 
+ <script>
+     
+    $("button").on("click", ".favorite", function(e){
+        console.log("button");
+        var favLink = $("<button>");
+        var favText = e.target.closest("a").text();
+        favLink.addClass("btn btn-Default");
+        favLink.text(favText);
+        $("#favorites-display").append(favLink);
+        //find nearest sibling <a>
+        
+
+
+    });
+ </script>
+
 </html>
