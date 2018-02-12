@@ -540,14 +540,10 @@ $.ajax({url: vidSearch, success: function(response){
         var vid = recipex.embed.html;
         $(vid).addClass("foodvideo");
         console.log(vid);
-<<<<<<< HEAD
         var column = $("<div>");
         column.addClass("col-xs-4");
         column.append(vid);
        $("body").append(column);
-=======
-       
->>>>>>> 8f4804f26823fd04e6773f1d8d121a433ee0f20d
     }
 
         var vidBox = $("<div class='container video'>");
