@@ -16,6 +16,7 @@ var convertedEmail = "";
 var ingredients = [];
 var recipes = [];
 var videos = [];
+var urls = [];
 var newObj;
 
 $("#signUpSubmit").on("click", function (event) {
@@ -56,24 +57,30 @@ $("#logInSubmit").on("click", function (event) {
             var recipeText = " ";
             var ingredientText = " ";
             var videoText = " ";
+            var urlText = " ";
             var x;
             var recipeArray = newObj.recipes;
             var ingredientArray = newObj.ingredients;
             var videoArray = newObj.videos;
+            var urlArray = newObj.urls;
             for (x in recipeArray) {
                 recipeText = recipeArray[x] + " ";
-                $("#favorites-display").append("<div>" + recipeText + "</div>");
+                // $("#favorites-display").append("<div>" + recipeText + "</div>");
                 recipes.push(recipeArray[x]);
             };
             for (x in ingredientArray) {
                 ingredientText = ingredientArray[x] + " ";
-                $("#favorites-display").append("<div>" + ingredientText + "</div>");
+                // $("#favorites-display").append("<div>" + ingredientText + "</div>");
                 ingredients.push(ingredientArray[x]);
             };
-            for (x in videoArray) {
-                videoText = videoArray[x] + " ";
-                $("#favorites-display").append("<div>" + videoText + "</div>");
-                videos.push(videoArray[x]);
+            // for (x in videoArray) {
+            //     videoText = videoArray[x] + " ";
+            //     $("#favorites-display").append("<div>" + videoText + "</div>");
+            //     videos.push(videoArray[x]);
+            // };
+            for (x in urlArray) {
+                urlText = urlArray[x] + " ";
+                urls.push(urlArray[x]);
             };
             // recipes.push(recipeArray);
             // ingredients.push(ingredientArray);
@@ -84,11 +91,15 @@ $("#logInSubmit").on("click", function (event) {
             $("#videoRow").slideDown();
             $("#startBox").hide();
             $("#logInModal").hide();
+            $("#favorites-display").val(" ");
+            for (i = 0; i < recipes.length; i++) {
+                $("#favorites-display").prepend("<div>" + recipes[i] + "</div>");
+            };
         } else {
             // alert("There are no users with that email!");
             swal("That Account Does Not Exist. Please Check The Spelling, Or Sign Up If This Is Your First Time!")
-            $("#logInModal").show();
-
+            $("#logInModal").hide();
+            $("#startBox").show();
         }
     }, function (errorObject) {
         console.log("The read failed: " + errorObject);
@@ -102,6 +113,7 @@ $("#submitBtn").on("click", function (event) {
     database.ref("users/" + convertedEmail).set({
         ingredients: ingredients,
         recipes: recipes,
+        urls: urls,
         videos: videos
     });
     database.ref("/users").once("value", function (snapshot) {
