@@ -37,6 +37,15 @@ body {
     margin-top: 40px;
 }
 
+#favorites-display {
+    height: 100px;
+    overflow: hidden;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    
+}
+
 .entry {
     float: left;
     height: 200px;
@@ -184,6 +193,9 @@ h1, h4 {
     height: 500px;
 }
 
+#video-display {
+    height: 400px;
+}
 
 
 .userLabel {

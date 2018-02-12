@@ -34,7 +34,7 @@ function valid2() {
     }
     
     if(string2.indexOf(substring1) !== -1 && string2.indexOf(substring2) !== -1) {
-        //$("#signUpSubmit").prop("disabled", false);
+        $("#signUpSubmit").prop("disabled", false);
         console.log("Looks like an email");
     }else{
         $("#signUpSubmit").prop("disabled", true);

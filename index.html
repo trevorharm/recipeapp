@@ -202,10 +202,9 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Video Results <span class="glyphicon glyphicon-film"></span></h3>
                     </div> 
-                    <div class="panel-body">
-                        
+                    <div class="panel-body" > 
                         <div class="well embed-responsive embed-responsive-16by9" id="video-display">
-                            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/53715392?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0\" width=\"1280\" height=\"720\" frameborder=\"0\" title=\"How to Make Chicken Tacos - A Visual Recipe\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            <!-- <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/53715392?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0\" width=\"1280\" height=\"720\" frameborder=\"0\" title=\"How to Make Chicken Tacos - A Visual Recipe\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
                             <h3>Video</h3>
                         
                         </div>
@@ -224,21 +223,4 @@
  <script src="../recipeapp/assets/javascript/logic.js"></script>
  <script src="../recipeapp/assets/javascript/logic-ajax.js"></script> 
  <script src="../recipeapp/assets/javascript/logic-firebase.js"></script>
-
- <script>
-     
-    $("button").on("click", ".favorite", function(e){
-        console.log("button");
-        var favLink = $("<button>");
-        var favText = e.target.closest("a").text();
-        favLink.addClass("btn btn-Default");
-        favLink.text(favText);
-        $("#favorites-display").append(favLink);
-        //find nearest sibling <a>
-        
-
-
-    });
- </script>
-
 </html>

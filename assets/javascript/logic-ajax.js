@@ -35,7 +35,7 @@ $.ajax({url: urlSearch, success: function(response){
         var column = $("<div>");
         column.addClass("col-xs-4");
         var textnode = $("<a>");
-        //favorite button
+        //generate favorite button
         var favBtn = $("<button>");
         favBtn.addClass("btn btn-primary favorite");
         favBtn.attr("id", "button-" + i);
@@ -71,19 +71,18 @@ $.ajax({url: vidSearch, success: function(response){
     for (var i =0; i< 9; i++)
     {
         var y = response.data.length;
-        console.log(y);
-        //var x = Math.floor(Math.random(0, y));
-        var x = Math.floor(Math.random() * Math.floor(y));
-        console.log(x);
+        var x = Math.floor(Math.random(0, y));
         var recipex = response.data[x];
         var name = recipex.name;
         console.log(name);
-        var vid = recipex.embed.html;
-        $(vid).attr("height","480");
-        $(vid).attr("width","720");
-        console.log(vid);
-       $("body").append(vid);
     }
+
+        var vidBox = $("<div class='container video'>");
+        vidBox.html( recipex.embed.html);
+       $("#video-display").empty();
+       $("#video-display").append(vidBox);
+            
+   
 }});
 }
 }
