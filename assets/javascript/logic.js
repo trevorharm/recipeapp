@@ -33,9 +33,8 @@ function valid2() {
         console.log("blank, disabled");
     }
     
-     //runs valid for sign up input/button
     if(string2.indexOf(substring1) !== -1 && string2.indexOf(substring2) !== -1) {
-        //$("#signUpSubmit").prop("disabled", false);
+        $("#signUpSubmit").prop("disabled", false);
         console.log("Looks like an email");
     }else{
         $("#signUpSubmit").prop("disabled", true);
@@ -46,7 +45,7 @@ function valid2() {
 function reset() {
        
     $("#displayRow").hide();
-    $("#videoRow").hide();
+    $("#video-display").empty();
     $("#logInModal").hide();
     $("#signUpModal").hide();
     $("mainScreen").show();
@@ -70,8 +69,6 @@ function slideTime2() {
 //MAIN PROCESSES/ ON PAGE LOAD==========================================================
 $(document).ready(function() {
 
-    var existingPeople =[];
-   
     var email;
     //var ingredient = $('#ingredient');
     //var input = $("#inputEmail");
@@ -81,9 +78,20 @@ $(document).ready(function() {
     $("#searchForm").submit(function(e){
         e.preventDefault();
     });
+
+    $("button").on("click", ".favorite", function(e){
+        console.log("button");
+        var favLink = $("<button>");
+        var favText = e.target.closest("a").text();
+        favLink.addClass("btn btn-Default");
+        favLink.text(favText);
+        $("#favorites-display").append(favLink);
+        //find nearest sibling <a>
+    
+
+    });
         
-    //$("startBox").show();
-        
+       
     
     //log in click event       
     $("#logInBtn").on("click", function() {
@@ -140,18 +148,18 @@ $(document).ready(function() {
     });
 
     // sign up submission click event <=================================
-    // $("#signUpSubmit").on("click", function(e) {
-    //     e.preventDefault();
+    $("#signUpSubmit").on("click", function(e) {
+        e.preventDefault();
         
-    //     let email = $("#signUpEmail").val().trim();
-    //     console.log("Welcome, " + email + "!");
-    //     $("#mainScreen").slideDown();
-    //     $("#searchRow").slideDown();
-    //     //$("#videoRow").slideDown();
-    //     //$("#displayRow").slideDown();
-    //     $("#startBox").hide();
-    //     $("#signUpModal").hide();
-    // });
+        let email = $("#signUpEmail").val().trim();
+        console.log("Welcome, " + email + "!");
+        $("#mainScreen").slideDown();
+        $("#searchRow").slideDown();
+        //$("#videoRow").slideDown();
+        //$("#displayRow").slideDown();
+        $("#startBox").hide();
+        $("#signUpModal").hide();
+    });
     
        
     //LOGGED IN, SEARCH ======================================   
@@ -182,42 +190,54 @@ $(document).ready(function() {
 
     });
 
+    $(".favorite").on("click", function(e){
+        console.log(e.target);
+        var favLink = $("<button>");
+        var favText = e.target.closest("a").text();
+        favLink.addClass("btn btn-Default");
+        favLink.text(favText);
+        $("#favorites-display").append(favLink);
+        //find nearest sibling <a>
+        
 
 
-    $("#signUpSubmit").on("click", function(event) {
-        event.preventDefault();
-        email = $("#signUpEmail").val().trim();
-        // console.log(email);
-        convertedEmail = email.replace(".", ",");
-        // console.log(convertedEmail);
-        database.ref("/users").once("value", function(snapshot) {
-            if (snapshot.child(convertedEmail).exists()) {
-                alert("That username is taken!");
-                 //reset();
-                var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
-                var parseJSON = JSON.parse(stringJSON);
-                var newObj = parseJSON;
-                console.log(newObj);
-                // console.log(newObj.ingredients);
-                // console.log(newObj.recipes);
-                // console.log(newObj.videos);
-            } else {
-                //alert("There are no users with that email!");
-                $("#signUpSubmit").prop("disabled", false);
-                $("#title").text("Welcome" + email + "!");
-                $("#mainScreen").slideDown();
-                $("#searchRow").slideDown();
-                $("#videoRow").slideDown();
-                $("#displayRow").slideDown();
-                $("#startBox").hide();
-                $("#signUpModal").hide();
-                //reset();
-            }
-        }, function(errorObject) {
-            console.log("The read failed: " + errorObject.code);
-        });
+    });
+
+
+
+    // $("#signUpSubmit").on("click", function(event) {
+    //     event.preventDefault();
+    //     let email = $("#signUpEmail").val().trim();
+    //     // console.log(email);
+    //     convertedEmail = email.replace(".", ",");
+    //     // console.log(convertedEmail);
+    //     database.ref("/users").once("value", function(snapshot) {
+    //         if (snapshot.child(convertedEmail).exists()) {
+    //             alert("That username is taken!");
+                 
+    //             var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
+    //             var parseJSON = JSON.parse(stringJSON);
+    //             var newObj = parseJSON;
+    //             console.log(newObj);
+    //             // console.log(newObj.ingredients);
+    //             // console.log(newObj.recipes);
+    //             // console.log(newObj.videos);
+    //         } else {
+    //             //alert("There are no users with that email!");
+    //             $("#signUpSubmit").prop("disabled", false);
+    //             $("#title").text("Welcome" + email + "!");
+    //             $("#mainScreen").slideDown();
+    //             $("#searchRow").slideDown();
+    //             $("#videoRow").slideDown();
+    //             $("#displayRow").slideDown();
+    //             $("#startBox").hide();
+    //             $("#signUpModal").hide();
+    //             //reset();
+    //         }
+    //     }, function(errorObject) {
+    //         console.log("The read failed: " + errorObject.code);
+    //     });
     });
     
     
     
-});
