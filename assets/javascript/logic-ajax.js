@@ -14,6 +14,7 @@ $('input[class="filter"]:checked').each(function(item) {
 console.log(nut);
 
 var search = $("#ingredient").val();
+getVideo(search);
 var api = "https://api.edamam.com/search?q=";
 var key = "&app_id=165d9a3a&app_key=13ed1985dcd9cb0a99bedc7ce4a3ef80";
 
@@ -22,6 +23,8 @@ console.log(urlSearch);
 $.ajax({url: urlSearch, success: function(response){
     console.log(response);
     var results = response.hits;
+    var x = results.length;
+    if (x > 0){
     for (var i = 0; i < 9; i++){
         
         var element = results[i];
@@ -100,7 +103,6 @@ $.ajax({url: urlSearch, success: function(response){
             console.log("The read failed: " + errorObject);
         });
         var y = $(this).data("num");
-        console.log(y);
         console.log(results[y].recipe.url);
         recipes.push(results[y].recipe.url);
         $("#favorites-display").val(" ");
@@ -114,7 +116,11 @@ $.ajax({url: urlSearch, success: function(response){
         });
     });
 
-    getVideo(search);
+    
+    }
+else {
+    swal("No recipes found for " + search +"!");
+}
 }});
 function getVideo(term){
 var api2="https://api.vimeo.com/videos?query=";
