@@ -35,7 +35,7 @@ $.ajax({url: urlSearch, success: function(response){
         var column = $("<div>");
         column.addClass("col-xs-4");
         var textnode = $("<a>");
-        //generate favorite button
+        //favorite button
         var favBtn = $("<button>");
         favBtn.addClass("btn btn-primary favorite");
         favBtn.attr("id", "button-" + i);
@@ -59,6 +59,465 @@ $.ajax({url: urlSearch, success: function(response){
         }); 
         
     }
+    $("#button-0").on("click", function (event) {
+        event.preventDefault();
+        database.ref("/users").once("value", function (snapshot) {
+            if (snapshot.child(convertedEmail).exists()) {
+                var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
+                var parseJSON = JSON.parse(stringJSON);
+                var newObj = parseJSON;
+                console.log(newObj);
+                var recipeText = " ";
+                var ingredientText = " ";
+                var videoText = " ";
+                var x;
+                var recipeArray = newObj.recipes;
+                var ingredientArray = newObj.ingredients;
+                var videoArray = newObj.videos;
+                recipes = [];
+                ingredients = [];
+                videos = [];
+                for (x in recipeArray) {
+                    recipeText = recipeArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + recipeText + "</div>");
+                    recipes.push(recipeArray[x]);
+                    // console.log(response);
+                };
+                for (x in ingredientArray) {
+                    ingredientText = ingredientArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + ingredientText + "</div>");
+                    ingredients.push(ingredientArray[x]);
+                };
+                for (x in videoArray) {
+                    videoText = videoArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + videoText + "</div>");
+                    videos.push(videoArray[x]);
+                };
+                    swal("Recipe Added to Favorites!");
+            }
+        }, function(errorObject) {
+            console.log("The read failed: " + errorObject);
+        });
+        console.log(results[0].recipe.url);
+        recipes.push(results[0].recipe.url);
+        $("#favorites-display").val(" ");
+        for (i = 0; i < recipes.length; i++) {
+            $("#favorites-display").append("<div>" + recipes[i] + "</div>");
+        };
+        database.ref("users/" + convertedEmail).set({
+            ingredients: ingredients,
+            recipes: recipes,
+            videos: videos
+        });
+    });
+    $("#button-1").on("click", function (event) {
+        event.preventDefault();
+        database.ref("/users").once("value", function (snapshot) {
+            if (snapshot.child(convertedEmail).exists()) {
+                var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
+                var parseJSON = JSON.parse(stringJSON);
+                var newObj = parseJSON;
+                console.log(newObj);
+                var recipeText = " ";
+                var ingredientText = " ";
+                var videoText = " ";
+                var x;
+                var recipeArray = newObj.recipes;
+                var ingredientArray = newObj.ingredients;
+                var videoArray = newObj.videos;
+                recipes = [];
+                ingredients = [];
+                videos = [];
+                for (x in recipeArray) {
+                    recipeText = recipeArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + recipeText + "</div>");
+                    recipes.push(recipeArray[x]);
+                    // console.log(response);
+                };
+                for (x in ingredientArray) {
+                    ingredientText = ingredientArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + ingredientText + "</div>");
+                    ingredients.push(ingredientArray[x]);
+                };
+                for (x in videoArray) {
+                    videoText = videoArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + videoText + "</div>");
+                    videos.push(videoArray[x]);
+                };
+                    swal("Recipe Added to Favorites!");
+            }
+        }, function(errorObject) {
+            console.log("The read failed: " + errorObject);
+        });
+        console.log(results[1].recipe.url);
+        recipes.push(results[1].recipe.url);
+        $("#favorites-display").val(" ");
+        for (i = 0; i < recipes.length; i++) {
+            $("#favorites-display").append("<div>" + recipes[i] + "</div>");
+        };
+        database.ref("users/" + convertedEmail).set({
+            ingredients: ingredients,
+            recipes: recipes,
+            videos: videos
+        });
+    });
+    $("#button-2").on("click", function (event) {
+        event.preventDefault();
+        database.ref("/users").once("value", function (snapshot) {
+            if (snapshot.child(convertedEmail).exists()) {
+                var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
+                var parseJSON = JSON.parse(stringJSON);
+                var newObj = parseJSON;
+                console.log(newObj);
+                var recipeText = " ";
+                var ingredientText = " ";
+                var videoText = " ";
+                var x;
+                var recipeArray = newObj.recipes;
+                var ingredientArray = newObj.ingredients;
+                var videoArray = newObj.videos;
+                recipes = [];
+                ingredients = [];
+                videos = [];
+                for (x in recipeArray) {
+                    recipeText = recipeArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + recipeText + "</div>");
+                    recipes.push(recipeArray[x]);
+                    // console.log(response);
+                };
+                for (x in ingredientArray) {
+                    ingredientText = ingredientArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + ingredientText + "</div>");
+                    ingredients.push(ingredientArray[x]);
+                };
+                for (x in videoArray) {
+                    videoText = videoArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + videoText + "</div>");
+                    videos.push(videoArray[x]);
+                };
+                    swal("Recipe Added to Favorites!");
+            }
+        }, function(errorObject) {
+            console.log("The read failed: " + errorObject);
+        });
+        console.log(results[2].recipe.url);
+        recipes.push(results[2].recipe.url);
+        $("#favorites-display").val(" ");
+        for (i = 0; i < recipes.length; i++) {
+            $("#favorites-display").append("<div>" + recipes[i] + "</div>");
+        };
+        database.ref("users/" + convertedEmail).set({
+            ingredients: ingredients,
+            recipes: recipes,
+            videos: videos
+        });
+    });
+    $("#button-3").on("click", function (event) {
+        event.preventDefault();
+        database.ref("/users").once("value", function (snapshot) {
+            if (snapshot.child(convertedEmail).exists()) {
+                var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
+                var parseJSON = JSON.parse(stringJSON);
+                var newObj = parseJSON;
+                console.log(newObj);
+                var recipeText = " ";
+                var ingredientText = " ";
+                var videoText = " ";
+                var x;
+                var recipeArray = newObj.recipes;
+                var ingredientArray = newObj.ingredients;
+                var videoArray = newObj.videos;
+                recipes = [];
+                ingredients = [];
+                videos = [];
+                for (x in recipeArray) {
+                    recipeText = recipeArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + recipeText + "</div>");
+                    recipes.push(recipeArray[x]);
+                    // console.log(response);
+                };
+                for (x in ingredientArray) {
+                    ingredientText = ingredientArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + ingredientText + "</div>");
+                    ingredients.push(ingredientArray[x]);
+                };
+                for (x in videoArray) {
+                    videoText = videoArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + videoText + "</div>");
+                    videos.push(videoArray[x]);
+                };
+                    swal("Recipe Added to Favorites!");
+            }
+        }, function(errorObject) {
+            console.log("The read failed: " + errorObject);
+        });
+        console.log(results[3].recipe.url);
+        recipes.push(results[3].recipe.url);
+        $("#favorites-display").val(" ");
+        for (i = 0; i < recipes.length; i++) {
+            $("#favorites-display").append("<div>" + recipes[i] + "</div>");
+        };
+        database.ref("users/" + convertedEmail).set({
+            ingredients: ingredients,
+            recipes: recipes,
+            videos: videos
+        });
+    });
+    $("#button-4").on("click", function (event) {
+        event.preventDefault();
+        database.ref("/users").once("value", function (snapshot) {
+            if (snapshot.child(convertedEmail).exists()) {
+                var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
+                var parseJSON = JSON.parse(stringJSON);
+                var newObj = parseJSON;
+                console.log(newObj);
+                var recipeText = " ";
+                var ingredientText = " ";
+                var videoText = " ";
+                var x;
+                var recipeArray = newObj.recipes;
+                var ingredientArray = newObj.ingredients;
+                var videoArray = newObj.videos;
+                recipes = [];
+                ingredients = [];
+                videos = [];
+                for (x in recipeArray) {
+                    recipeText = recipeArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + recipeText + "</div>");
+                    recipes.push(recipeArray[x]);
+                    // console.log(response);
+                };
+                for (x in ingredientArray) {
+                    ingredientText = ingredientArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + ingredientText + "</div>");
+                    ingredients.push(ingredientArray[x]);
+                };
+                for (x in videoArray) {
+                    videoText = videoArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + videoText + "</div>");
+                    videos.push(videoArray[x]);
+                };
+                    swal("Recipe Added to Favorites!");
+            }
+        }, function(errorObject) {
+            console.log("The read failed: " + errorObject);
+        });
+        console.log(results[4].recipe.url);
+        recipes.push(results[4].recipe.url);
+        $("#favorites-display").val(" ");
+        for (i = 0; i < recipes.length; i++) {
+            $("#favorites-display").append("<div>" + recipes[i] + "</div>");
+        };
+        database.ref("users/" + convertedEmail).set({
+            ingredients: ingredients,
+            recipes: recipes,
+            videos: videos
+        });
+    });
+    $("#button-5").on("click", function (event) {
+        event.preventDefault();
+        database.ref("/users").once("value", function (snapshot) {
+            if (snapshot.child(convertedEmail).exists()) {
+                var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
+                var parseJSON = JSON.parse(stringJSON);
+                var newObj = parseJSON;
+                console.log(newObj);
+                var recipeText = " ";
+                var ingredientText = " ";
+                var videoText = " ";
+                var x;
+                var recipeArray = newObj.recipes;
+                var ingredientArray = newObj.ingredients;
+                var videoArray = newObj.videos;
+                recipes = [];
+                ingredients = [];
+                videos = [];
+                for (x in recipeArray) {
+                    recipeText = recipeArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + recipeText + "</div>");
+                    recipes.push(recipeArray[x]);
+                    // console.log(response);
+                };
+                for (x in ingredientArray) {
+                    ingredientText = ingredientArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + ingredientText + "</div>");
+                    ingredients.push(ingredientArray[x]);
+                };
+                for (x in videoArray) {
+                    videoText = videoArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + videoText + "</div>");
+                    videos.push(videoArray[x]);
+                };
+                    swal("Recipe Added to Favorites!");
+            }
+        }, function(errorObject) {
+            console.log("The read failed: " + errorObject);
+        });
+        console.log(results[5].recipe.url);
+        recipes.push(results[5].recipe.url);
+        $("#favorites-display").val(" ");
+        for (i = 0; i < recipes.length; i++) {
+            $("#favorites-display").append("<div>" + recipes[i] + "</div>");
+        };
+        database.ref("users/" + convertedEmail).set({
+            ingredients: ingredients,
+            recipes: recipes,
+            videos: videos
+        });
+    });
+    $("#button-6").on("click", function (event) {
+        event.preventDefault();
+        database.ref("/users").once("value", function (snapshot) {
+            if (snapshot.child(convertedEmail).exists()) {
+                var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
+                var parseJSON = JSON.parse(stringJSON);
+                var newObj = parseJSON;
+                console.log(newObj);
+                var recipeText = " ";
+                var ingredientText = " ";
+                var videoText = " ";
+                var x;
+                var recipeArray = newObj.recipes;
+                var ingredientArray = newObj.ingredients;
+                var videoArray = newObj.videos;
+                recipes = [];
+                ingredients = [];
+                videos = [];
+                for (x in recipeArray) {
+                    recipeText = recipeArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + recipeText + "</div>");
+                    recipes.push(recipeArray[x]);
+                    // console.log(response);
+                };
+                for (x in ingredientArray) {
+                    ingredientText = ingredientArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + ingredientText + "</div>");
+                    ingredients.push(ingredientArray[x]);
+                };
+                for (x in videoArray) {
+                    videoText = videoArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + videoText + "</div>");
+                    videos.push(videoArray[x]);
+                };
+                    swal("Recipe Added to Favorites!");
+            }
+        }, function(errorObject) {
+            console.log("The read failed: " + errorObject);
+        });
+        console.log(results[6].recipe.url);
+        recipes.push(results[6].recipe.url);
+        $("#favorites-display").val(" ");
+        for (i = 0; i < recipes.length; i++) {
+            $("#favorites-display").append("<div>" + recipes[i] + "</div>");
+        };
+        database.ref("users/" + convertedEmail).set({
+            ingredients: ingredients,
+            recipes: recipes,
+            videos: videos
+        });
+    });
+    $("#button-7").on("click", function (event) {
+        event.preventDefault();
+        database.ref("/users").once("value", function (snapshot) {
+            if (snapshot.child(convertedEmail).exists()) {
+                var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
+                var parseJSON = JSON.parse(stringJSON);
+                var newObj = parseJSON;
+                console.log(newObj);
+                var recipeText = " ";
+                var ingredientText = " ";
+                var videoText = " ";
+                var x;
+                var recipeArray = newObj.recipes;
+                var ingredientArray = newObj.ingredients;
+                var videoArray = newObj.videos;
+                recipes = [];
+                ingredients = [];
+                videos = [];
+                for (x in recipeArray) {
+                    recipeText = recipeArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + recipeText + "</div>");
+                    recipes.push(recipeArray[x]);
+                    // console.log(response);
+                };
+                for (x in ingredientArray) {
+                    ingredientText = ingredientArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + ingredientText + "</div>");
+                    ingredients.push(ingredientArray[x]);
+                };
+                for (x in videoArray) {
+                    videoText = videoArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + videoText + "</div>");
+                    videos.push(videoArray[x]);
+                };
+                    swal("Recipe Added to Favorites!");
+            }
+        }, function(errorObject) {
+            console.log("The read failed: " + errorObject);
+        });
+        console.log(results[7].recipe.url);
+        recipes.push(results[7].recipe.url);
+        $("#favorites-display").val(" ");
+        for (i = 0; i < recipes.length; i++) {
+            $("#favorites-display").append("<div>" + recipes[i] + "</div>");
+        };
+        database.ref("users/" + convertedEmail).set({
+            ingredients: ingredients,
+            recipes: recipes,
+            videos: videos
+        });
+    });
+    $("#button-8").on("click", function (event) {
+        event.preventDefault();
+        database.ref("/users").once("value", function (snapshot) {
+            if (snapshot.child(convertedEmail).exists()) {
+                var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
+                var parseJSON = JSON.parse(stringJSON);
+                var newObj = parseJSON;
+                console.log(newObj);
+                var recipeText = " ";
+                var ingredientText = " ";
+                var videoText = " ";
+                var x;
+                var recipeArray = newObj.recipes;
+                var ingredientArray = newObj.ingredients;
+                var videoArray = newObj.videos;
+                recipes = [];
+                ingredients = [];
+                videos = [];
+                for (x in recipeArray) {
+                    recipeText = recipeArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + recipeText + "</div>");
+                    recipes.push(recipeArray[x]);
+                    // console.log(response);
+                };
+                for (x in ingredientArray) {
+                    ingredientText = ingredientArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + ingredientText + "</div>");
+                    ingredients.push(ingredientArray[x]);
+                };
+                for (x in videoArray) {
+                    videoText = videoArray[x] + " ";
+                    // $("#favorites-display").append("<div>" + videoText + "</div>");
+                    videos.push(videoArray[x]);
+                };
+                    swal("Recipe Added to Favorites!");
+            }
+        }, function(errorObject) {
+            console.log("The read failed: " + errorObject);
+        });
+        console.log(results[8].recipe.url);
+        recipes.push(results[8].recipe.url);
+        $("#favorites-display").val(" ");
+        for (i = 0; i < recipes.length; i++) {
+            $("#favorites-display").append("<div>" + recipes[i] + "</div>");
+        };
+        database.ref("users/" + convertedEmail).set({
+            ingredients: ingredients,
+            recipes: recipes,
+            videos: videos
+        });
+    });
     getVideo(search);
 }});
 function getVideo(term){
@@ -71,10 +530,18 @@ $.ajax({url: vidSearch, success: function(response){
     for (var i =0; i< 9; i++)
     {
         var y = response.data.length;
-        var x = Math.floor(Math.random(0, y));
+        console.log(y);
+        //var x = Math.floor(Math.random(0, y));
+        var x = Math.floor(Math.random() * Math.floor(y));
+        console.log(x);
         var recipex = response.data[x];
         var name = recipex.name;
         console.log(name);
+        var vid = recipex.embed.html;
+        $(vid).attr("height","480");
+        $(vid).attr("width","720");
+        console.log(vid);
+       $("body").append(vid);
     }
 
         var vidBox = $("<div class='container video'>");
