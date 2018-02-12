@@ -105,15 +105,23 @@ $.ajax({url: urlSearch, success: function(response){
             console.log("The read failed: " + errorObject);
         });
         var y = $(this).data("num");
-        console.log(results[y].recipe.label);
-        recipes.push(results[y].recipe.label);
-        urls.push(results[y].recipe.url);
+        var iLabel = results[y].recipe.label;
+        var iUrl = results[y].recipe.url;
+        // console.log(results[y].recipe.label);
+        recipes.push(iLabel);
+        urls.push(iUrl);
 
-        $("#favorites-display").val(" ");
-        for (i = 0; i < recipes.length; i++) {
-            $("#favorites-display").prepend("<div>" + recipes[i] + "</div>");
-            recipes = [];
-        };
+        // $("#favorites-display").val(" ");
+        
+        // $("#favorites-display").prepend("<div>" + iLabel + "</div>");
+         
+        var favNode = $("<a>");
+        favNode.append(iLabel);
+        $(favNode).attr("href", iUrl);
+        favNode.attr("target", "_blank");
+        favNode.css("font-size", "150%");
+        $("#favorites-display").prepend(favNode);
+
         database.ref("users/" + convertedEmail).set({
             ingredients: ingredients,
             recipes: recipes,
