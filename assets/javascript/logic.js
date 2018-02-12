@@ -46,6 +46,7 @@ function reset() {
        
     $("#displayRow").hide();
     $("#video-display").empty();
+    $("#video-display").css("height", "100px");
     $("#logInModal").hide();
     $("#signUpModal").hide();
     $("mainScreen").show();
@@ -69,27 +70,23 @@ function slideTime2() {
 //MAIN PROCESSES/ ON PAGE LOAD==========================================================
 $(document).ready(function() {
 
-    var email;
-    //var ingredient = $('#ingredient');
-    //var input = $("#inputEmail");
-    //var signUp = $("#signUpEmail");
-    
-    
+    //var email;
+     
     $("#searchForm").submit(function(e){
         e.preventDefault();
     });
 
-    $("button").on("click", ".favorite", function(e){
-        console.log("button");
-        var favLink = $("<button>");
-        var favText = e.target.closest("a").text();
-        favLink.addClass("btn btn-Default");
-        favLink.text(favText);
-        $("#favorites-display").append(favLink);
-        //find nearest sibling <a>
+    // $("button").on("click", ".favorite", function(e){
+    //     console.log("button");
+    //     var favLink = $("<button>");
+    //     var favText = e.target.closest("a").text();
+    //     favLink.addClass("btn btn-Default");
+    //     favLink.text(favText);
+    //     $("#favorites-display").append(favLink);
+    //     //find nearest sibling <a>
     
 
-    });
+    // });
         
        
     
@@ -131,35 +128,35 @@ $(document).ready(function() {
        
        
      //logging in================================================ 
-    $("#logInSubmit").on("click", function(e) {
-        e.preventDefault();
+    // $("#logInSubmit").on("click", function(e) {
+    //     e.preventDefault();
         
-        let email = $("#inputEmail").val().trim();
-        console.log("Welcome, " + email + "!");
-        $("#mainScreen").slideDown();
-        $("#searchRow").slideDown();
-        $("#favorites").slideDown();
-        //$("#videoRow").slideDown();
-        //$("#displayRow").slideDown();
-        //$("#videoRow").hide();
-        //$("#displayRow").hide();
-        $("#startBox").hide();
-        $("#logInModal").hide();
-    });
+    //     let email = $("#inputEmail").val().trim();
+    //     console.log("Welcome, " + email + "!");
+    //     $("#mainScreen").slideDown();
+    //     $("#searchRow").slideDown();
+    //     $("#favorites").slideDown();
+    //     //$("#videoRow").slideDown();
+    //     //$("#displayRow").slideDown();
+    //     //$("#videoRow").hide();
+    //     //$("#displayRow").hide();
+    //     $("#startBox").hide();
+    //     $("#logInModal").hide();
+    // });
 
-    // sign up submission click event <=================================
-    $("#signUpSubmit").on("click", function(e) {
-        e.preventDefault();
+    // // sign up submission click event <=================================
+    // $("#signUpSubmit").on("click", function(e) {
+    //     e.preventDefault();
         
-        let email = $("#signUpEmail").val().trim();
-        console.log("Welcome, " + email + "!");
-        $("#mainScreen").slideDown();
-        $("#searchRow").slideDown();
-        //$("#videoRow").slideDown();
-        //$("#displayRow").slideDown();
-        $("#startBox").hide();
-        $("#signUpModal").hide();
-    });
+    //     let email = $("#signUpEmail").val().trim();
+    //     console.log("Welcome, " + email + "!");
+    //     $("#mainScreen").slideDown();
+    //     $("#searchRow").slideDown();
+    //     //$("#videoRow").slideDown();
+    //     //$("#displayRow").slideDown();
+    //     $("#startBox").hide();
+    //     $("#signUpModal").hide();
+    // });
     
        
     //LOGGED IN, SEARCH ======================================   
@@ -179,8 +176,8 @@ $(document).ready(function() {
         
         //div to fill with info from results
         var wellDiv = $('<div>');
-        wellDiv.attr('id', 'recipe-0');
-        wellDiv.html("<h3>" + ingredient.val() + "</h3>");
+        wellDiv.attr('id', 'favHead');
+        wellDiv.html("<h2>" + ingredient.val() + " recipes:</h2>");
         
         
         //append div to display
@@ -190,54 +187,17 @@ $(document).ready(function() {
 
     });
 
-    $(".favorite").on("click", function(e){
-        console.log(e.target);
-        var favLink = $("<button>");
-        var favText = e.target.closest("a").text();
-        favLink.addClass("btn btn-Default");
-        favLink.text(favText);
-        $("#favorites-display").append(favLink);
-        //find nearest sibling <a>
-        
+    // $(".favorite").on("click", function(e){
+    //     console.log(e.target);
+    //     var favLink = $("<button>");
+    //     var favText = e.target.closest("a").text();
+    //     favLink.addClass("btn btn-Default");
+    //     favLink.text(favText);
+    //     $("#favorites-display").append(favLink);
+    
 
+});
 
-    });
-
-
-
-    // $("#signUpSubmit").on("click", function(event) {
-    //     event.preventDefault();
-    //     let email = $("#signUpEmail").val().trim();
-    //     // console.log(email);
-    //     convertedEmail = email.replace(".", ",");
-    //     // console.log(convertedEmail);
-    //     database.ref("/users").once("value", function(snapshot) {
-    //         if (snapshot.child(convertedEmail).exists()) {
-    //             alert("That username is taken!");
-                 
-    //             var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
-    //             var parseJSON = JSON.parse(stringJSON);
-    //             var newObj = parseJSON;
-    //             console.log(newObj);
-    //             // console.log(newObj.ingredients);
-    //             // console.log(newObj.recipes);
-    //             // console.log(newObj.videos);
-    //         } else {
-    //             //alert("There are no users with that email!");
-    //             $("#signUpSubmit").prop("disabled", false);
-    //             $("#title").text("Welcome" + email + "!");
-    //             $("#mainScreen").slideDown();
-    //             $("#searchRow").slideDown();
-    //             $("#videoRow").slideDown();
-    //             $("#displayRow").slideDown();
-    //             $("#startBox").hide();
-    //             $("#signUpModal").hide();
-    //             //reset();
-    //         }
-    //     }, function(errorObject) {
-    //         console.log("The read failed: " + errorObject.code);
-    //     });
-    });
     
     
     
