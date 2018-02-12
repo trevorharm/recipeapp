@@ -67,12 +67,12 @@ $("#logInSubmit").on("click", function (event) {
             };
             for (x in ingredientArray) {
                 ingredientText = ingredientArray[x] + " ";
-                $("#favorites-display").append("<div>" + ingredientText + "</div>");
+                // $("#favorites-display").append("<div>" + ingredientText + "</div>");
                 ingredients.push(ingredientArray[x]);
             };
             for (x in videoArray) {
                 videoText = videoArray[x] + " ";
-                $("#favorites-display").append("<div>" + videoText + "</div>");
+                // $("#favorites-display").append("<div>" + videoText + "</div>");
                 videos.push(videoArray[x]);
             };
             // recipes.push(recipeArray);
