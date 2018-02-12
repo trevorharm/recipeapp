@@ -134,10 +134,10 @@ $.ajax({url: vidSearch, success: function(response){
         var name = recipex.name;
         console.log(name);
         var vid = recipex.embed.html;
-        var vidBox = $("<div class='container video embed-responsive embed-responsive-16by9'>");
+        var vidBox = $("<div class='container video'>");
         vidBox.html(vid);
        $("#video-display").empty();
-        $("#video-display").css("height", "300px");
+        $("#video-display").css("height", "400px");
         $("#video-display").append(vidBox);
        
     }
