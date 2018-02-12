@@ -71,11 +71,18 @@ $.ajax({url: vidSearch, success: function(response){
     for (var i =0; i< 9; i++)
     {
         var y = response.data.length;
-        var x = Math.floor(Math.random(0, y));
+        console.log(y);
+        //var x = Math.floor(Math.random(0, y));
+        var x = Math.floor(Math.random() * Math.floor(y));
+        console.log(x);
         var recipex = response.data[x];
         var name = recipex.name;
         console.log(name);
-       // $("body").append(recipex.embed.html);
+        var vid = recipex.embed.html;
+        $(vid).attr("height","480");
+        $(vid).attr("width","720");
+        console.log(vid);
+       $("body").append(vid);
     }
 }});
 }
