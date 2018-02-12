@@ -14,8 +14,8 @@ var database = firebase.database();
 var email = "";
 var convertedEmail = "";
 var ingredients = [];
-var recipes = ["How to", "2", "3", "4"];
-var videos = ["Vid"];
+var recipes = [];
+var videos = [];
 var newObj;
 
 $("#signUpSubmit").on("click", function (event) {
@@ -63,15 +63,21 @@ $("#logInSubmit").on("click", function (event) {
             for (x in recipeArray) {
                 recipeText = recipeArray[x] + " ";
                 $("#favorites-display").append("<div>" + recipeText + "</div>");
-            }
+                recipes.push(recipeArray[x]);
+            };
             for (x in ingredientArray) {
                 ingredientText = ingredientArray[x] + " ";
                 $("#favorites-display").append("<div>" + ingredientText + "</div>");
-            }
+                ingredients.push(ingredientArray[x]);
+            };
             for (x in videoArray) {
                 videoText = videoArray[x] + " ";
                 $("#favorites-display").append("<div>" + videoText + "</div>");
+                videos.push(videoArray[x]);
             };
+            // recipes.push(recipeArray);
+            // ingredients.push(ingredientArray);
+            // videos.push(videoArray);
             $("#mainScreen").slideDown();
             $("#searchRow").slideDown();
             $("#favorites").slideDown();
@@ -106,5 +112,5 @@ $("#submitBtn").on("click", function (event) {
         // console.log(newObj.ingredients);
         // console.log(newObj.recipes);
         // console.log(newObj.videos);
-    })
+    });
 });
