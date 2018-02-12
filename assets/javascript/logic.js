@@ -131,35 +131,35 @@ $(document).ready(function() {
        
        
      //logging in================================================ 
-    $("#logInSubmit").on("click", function(e) {
-        e.preventDefault();
+    // $("#logInSubmit").on("click", function(e) {
+    //     e.preventDefault();
         
-        let email = $("#inputEmail").val().trim();
-        console.log("Welcome, " + email + "!");
-        $("#mainScreen").slideDown();
-        $("#searchRow").slideDown();
-        $("#favorites").slideDown();
-        //$("#videoRow").slideDown();
-        //$("#displayRow").slideDown();
-        //$("#videoRow").hide();
-        //$("#displayRow").hide();
-        $("#startBox").hide();
-        $("#logInModal").hide();
-    });
+    //     let email = $("#inputEmail").val().trim();
+    //     console.log("Welcome, " + email + "!");
+    //     $("#mainScreen").slideDown();
+    //     $("#searchRow").slideDown();
+    //     $("#favorites").slideDown();
+    //     //$("#videoRow").slideDown();
+    //     //$("#displayRow").slideDown();
+    //     //$("#videoRow").hide();
+    //     //$("#displayRow").hide();
+    //     $("#startBox").hide();
+    //     $("#logInModal").hide();
+    // });
 
-    // sign up submission click event <=================================
-    $("#signUpSubmit").on("click", function(e) {
-        e.preventDefault();
+    // // sign up submission click event <=================================
+    // $("#signUpSubmit").on("click", function(e) {
+    //     e.preventDefault();
         
-        let email = $("#signUpEmail").val().trim();
-        console.log("Welcome, " + email + "!");
-        $("#mainScreen").slideDown();
-        $("#searchRow").slideDown();
-        //$("#videoRow").slideDown();
-        //$("#displayRow").slideDown();
-        $("#startBox").hide();
-        $("#signUpModal").hide();
-    });
+    //     let email = $("#signUpEmail").val().trim();
+    //     console.log("Welcome, " + email + "!");
+    //     $("#mainScreen").slideDown();
+    //     $("#searchRow").slideDown();
+    //     //$("#videoRow").slideDown();
+    //     //$("#displayRow").slideDown();
+    //     $("#startBox").hide();
+    //     $("#signUpModal").hide();
+    // });
     
        
     //LOGGED IN, SEARCH ======================================   
