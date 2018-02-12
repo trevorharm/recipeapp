@@ -2,7 +2,7 @@
 
 var substring1 = "@";
 var substring2 = ".com";
-var substring3 = ".net"
+var substring3 = ".net";
 var ingredient = $('#ingredient');
 var input = $("#inputEmail");
 var signUp = $("#signUpEmail");
