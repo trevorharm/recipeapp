@@ -210,6 +210,7 @@ h1, h4 {
 }
 
 #favHead h2{
+    
     border-left: 10px double blue;
     font-size: 45px;
     font-weight: bold;
@@ -224,6 +225,10 @@ h1, h4 {
 .checkbox label, .panel-title {
     font-weight: bold;
     font-size: 18px;
+}
+
+#submitBtn {
+    background-color: darkblue;
 }
 
 @media (max-width:798px) {

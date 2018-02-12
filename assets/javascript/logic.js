@@ -2,6 +2,7 @@
 
 var substring1 = "@";
 var substring2 = ".com";
+var substring3 = ".net"
 var ingredient = $('#ingredient');
 var input = $("#inputEmail");
 var signUp = $("#signUpEmail");
@@ -13,16 +14,16 @@ function valid() {
     var string = $("#inputEmail").val();
     if(string === "") {
         $("#logInSubmit").prop("disabled", true);
-        console.log("blank, disabled");
+        
     }
     
      //runs valid function to check input for "@" and ".com" strings before enabling button
-    if(string.indexOf(substring1) !== -1 && string.indexOf(substring2) !== -1) {
+    if(string.indexOf(substring1) !== -1 &&   (string.indexOf(substring2) !== -1 || string.indexOf(substring3) !== -1)   ) {
         $("#logInSubmit").prop("disabled", false);
-        console.log(string);
+       
     }else{
         $("#logInSubmit").prop("disabled", true);
-        console.log(string);
+        
     }
 }
 
@@ -30,15 +31,15 @@ function valid2() {
     var string2 = $("#signUpEmail").val();
     if(string2 === "") {
         $("#signUpSubmit").prop("disabled", true);
-        console.log("blank, disabled");
+        
     }
     
-    if(string2.indexOf(substring1) !== -1 && string2.indexOf(substring2) !== -1) {
+    if(string2.indexOf(substring1) !== -1 && (string2.indexOf(substring2) !== -1 || string.indexOf(substring3) !== -1)  ) {
         $("#signUpSubmit").prop("disabled", false);
-        console.log("Looks like an email");
+        
     }else{
         $("#signUpSubmit").prop("disabled", true);
-        console.log(string2);
+        ;
     }
 }
 
@@ -92,7 +93,7 @@ $(document).ready(function() {
     
     //log in click event       
     $("#logInBtn").on("click", function() {
-        console.log("clicked");
+        
         $("#startBox").slideUp();
         slideTime();
         valid();                          
@@ -100,7 +101,7 @@ $(document).ready(function() {
 
 
     $("#signUpBtn").on("click", function() {
-        console.log("clicked");
+        
         $("#startBox").slideUp();
         signUpSlide();
         valid2();                          
