@@ -44,7 +44,9 @@ var config = {
         convertedEmail = email.replace(".", ",");
         database.ref("/users").once("value", function(snapshot) {
             if (snapshot.child(convertedEmail).exists()) {
+                console.log(snapshot.child(convertedEmail));
                 var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
+                console.log(stringJSON);
                 var parseJSON = JSON.parse(stringJSON);
                 newObj = parseJSON;
                 console.log(newObj);
@@ -84,11 +86,11 @@ var config = {
                 newObj = parseJSON;
                 console.log(newObj);
                 var x;
-                var savedIngredient = " ";
+                var savedIngredients = " ";
                 var ingredientArray = newObj.ingredients;
                 for (x in ingredientArray) {
-                    savedIngredient = ingredientArray[x] + " ";
-                    ingredients.push(savedIngredient);
+                    savedIngredients = ingredientArray[x] + " ";
+                    ingredients.push(savedIngredients);
                 }
                 console.log(ingredients);
             }
