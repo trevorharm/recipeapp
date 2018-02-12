@@ -38,7 +38,7 @@ body {
 }
 
 #favorites-display {
-    height: 200px;
+    height: 250px;
     font-family: "sofia", "times new roman";
     overflow: scroll;
     background-color: darkblue;
