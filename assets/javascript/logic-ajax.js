@@ -80,6 +80,7 @@ $.ajax({url: vidSearch, success: function(response){
         var vidBox = $("<div class='container video'>");
         vidBox.html( recipex.embed.html);
        $("#video-display").empty();
+       $("#video-display").css("height", "400px");
        $("#video-display").append(vidBox);
             
    

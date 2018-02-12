@@ -40,9 +40,12 @@ body {
 #favorites-display {
     height: 100px;
     overflow: hidden;
-    background-color: blue;
+    background-color: darkblue;
     color: white;
     font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+
     
 }
 
@@ -194,7 +197,7 @@ h1, h4 {
 }
 
 #video-display {
-    height: 400px;
+    height: 100px;
 }
 
 
