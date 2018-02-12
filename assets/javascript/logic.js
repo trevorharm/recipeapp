@@ -45,7 +45,7 @@ function valid2() {
 function reset() {
        
     $("#displayRow").hide();
-    $("#videoRow").hide();
+    $("#video-display").empty();
     $("#logInModal").hide();
     $("#signUpModal").hide();
     $("mainScreen").show();
@@ -69,8 +69,6 @@ function slideTime2() {
 //MAIN PROCESSES/ ON PAGE LOAD==========================================================
 $(document).ready(function() {
 
-    var existingPeople =[];
-   
     var email;
     //var ingredient = $('#ingredient');
     //var input = $("#inputEmail");
@@ -93,8 +91,7 @@ $(document).ready(function() {
 
     });
         
-    //$("startBox").show();
-        
+       
     
     //log in click event       
     $("#logInBtn").on("click", function() {

@@ -148,9 +148,6 @@ h1, h4 {
     box-shadow: 0 0 8px blue;
 }
 
-.filter label:focus {
-    color: hotpink;
-}
 
 #signUpBtn {
     width:400px;
@@ -194,9 +191,6 @@ h1, h4 {
     margin:15px 0 15px 0;
 }
 
-#videoRow .panel-body {
-    height: 500px;
-}
 
 #video-display {
     height: 100px;
@@ -205,6 +199,7 @@ h1, h4 {
 
 .userLabel {
    font-size: 25px;
+   font-family: sofia, "times new roman";
    padding-left: 10px;
    border-left: 8px double blue;
    text-shadow: 2px 2px 2px lightslategray;
