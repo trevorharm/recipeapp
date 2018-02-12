@@ -11,7 +11,7 @@ function runSearch() {
         var n = box.data("n");
         nut += "&" + f + "=" + n;
     });
-    console.log(nut);
+    // console.log(nut);
 
     var search = $("#ingredient").val();
     getVideo(search);
@@ -19,10 +19,10 @@ function runSearch() {
     var key = "&app_id=165d9a3a&app_key=13ed1985dcd9cb0a99bedc7ce4a3ef80";
 
     var urlSearch = api + search + key + nut;
-    console.log(urlSearch);
+    // console.log(urlSearch);
     $.ajax({
         url: urlSearch, success: function (response) {
-            console.log(response);
+            // console.log(response);
             var results = response.hits;
             var x = results.length;
             if (x > 0) {
@@ -35,7 +35,7 @@ function runSearch() {
                     var txt = dataFood.healthLabels;
                     var link = dataFood.url;
 
-                    console.log(link);
+                    // console.log(link);
                     var column = $("<div>");
                     column.addClass("col-xs-4");
                     var textnode = $("<a>");
@@ -71,7 +71,7 @@ function runSearch() {
                             var stringJSON = JSON.stringify(snapshot.child(convertedEmail));
                             var parseJSON = JSON.parse(stringJSON);
                             var newObj = parseJSON;
-                            console.log(newObj);
+                            // console.log(newObj);
                             var recipeText = " ";
                             var ingredientText = " ";
                             var videoText = " ";
@@ -101,10 +101,10 @@ function runSearch() {
                             swal("Recipe Added to Favorites!");
                         }
                     }, function (errorObject) {
-                        console.log("The read failed: " + errorObject);
+                        // console.log("The read failed: " + errorObject);
                     });
                     var y = $(this).data("num");
-                    console.log(results[y].recipe.url);
+                    // console.log(results[y].recipe.url);
                     recipes.push(results[y].recipe.url);
                     $("#favorites-display").val(" ");
                     for (i = 0; i < recipes.length; i++) {
@@ -131,7 +131,7 @@ function runSearch() {
         var vidSearch = api2 + search2 + key2;
         $.ajax({
             url: vidSearch, success: function (response) {
-                console.log(response);
+                // console.log(response);
                 for (var i = 0; i < 9; i++) {
                     var y = response.data.length;
                     // console.log(y);
@@ -140,7 +140,7 @@ function runSearch() {
                     // console.log(x);
                     var recipex = response.data[x];
                     var name = recipex.name;
-                    console.log(name);
+                    // console.log(name);
                     var vid = recipex.embed.html;
                     var vidBox = $("<div class='container video'>");
                     vidBox.html(vid);
