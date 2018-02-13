@@ -114,14 +114,15 @@ $.ajax({url: urlSearch, success: function(response){
         // $("#favorites-display").val(" ");
         
         // $("#favorites-display").prepend("<div>" + iLabel + "</div>");
-         
+        var faves = $("<div>");
         var favNode = $("<a>");
         favNode.append(iLabel);
         $(favNode).attr("href", iUrl);
         favNode.attr("target", "_blank");
         favNode.css("font-size", "150%");
         favNode.addClass("favLink");
-        $("#favorites-display").prepend(favNode);
+        faves.append(favNode);
+        $("#favorites-display").prepend(faves);
 
         database.ref("users/" + convertedEmail).set({
             ingredients: ingredients,
