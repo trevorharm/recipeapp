@@ -81,7 +81,10 @@ body {
     padding: 20px;
 }
 
-
+#favorites-display a, #favorites-display a:hover {
+    color:white;
+    text-decoration: none;
+}
 
 
 .jumbotron h1 {
