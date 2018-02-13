@@ -93,7 +93,19 @@ $("#logInSubmit").on("click", function (event) {
             $("#logInModal").hide();
             $("#favorites-display").val(" ");
             for (i = 0; i < recipes.length; i++) {
-                $("#favorites-display").prepend("<div>" + recipes[i] + "</div>");
+                var link = urls[i];
+                var text = recipes[i];
+                var node = $("<div>");
+                var favNode = $("<a>");
+                favNode.append(text);
+                $(favNode).attr("href", link);
+                favNode.attr("target", "_blank");
+                favNode.addClass("favLink");
+                favNode.css("font-size", "150%");
+                $(node).append(favNode);
+                $("#favorites-display").prepend(node);
+
+                // $("#favorites-display").prepend("<div>" + recipes[i] + "</div>");
             };
         } else {
             // alert("There are no users with that email!");

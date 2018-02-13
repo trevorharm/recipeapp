@@ -120,6 +120,7 @@ $.ajax({url: urlSearch, success: function(response){
         $(favNode).attr("href", iUrl);
         favNode.attr("target", "_blank");
         favNode.css("font-size", "150%");
+        favNode.addClass("favLink");
         $("#favorites-display").prepend(favNode);
 
         database.ref("users/" + convertedEmail).set({
