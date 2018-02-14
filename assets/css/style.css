@@ -39,7 +39,7 @@ body {
 
 #favorites-display {
     height: 250px;
-    font-family: "sofia", "times new roman";
+    font-family: "times new roman";
     overflow: scroll;
     background-color: darkblue;
     color: white;
@@ -73,7 +73,7 @@ body {
 #startBox h1 {
     font-family: "sofia", "times new roman";
     margin-bottom: 40px;
-    font-size: 90px;
+    font-size: 120px;
     text-shadow: 8px 4px 2px rgba(117, 117, 117, 0.692);
     border: 8px double white;
     width: 560px;
