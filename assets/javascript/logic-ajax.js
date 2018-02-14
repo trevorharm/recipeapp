@@ -86,13 +86,10 @@ $.ajax({url: urlSearch, success: function(response){
                 urls = [];
                 for (x in recipeArray) {
                     recipeText = recipeArray[x] + " ";
-                    // $("#favorites-display").append("<div>" + recipeText + "</div>");
                     recipes.push(recipeArray[x]);
-                    // console.log(response);
                 };
                 for (x in ingredientArray) {
                     ingredientText = ingredientArray[x] + " ";
-                    // $("#favorites-display").append("<div>" + ingredientText + "</div>");
                     ingredients.push(ingredientArray[x]);
                 };
                 for (x in urlArray) {
@@ -107,13 +104,9 @@ $.ajax({url: urlSearch, success: function(response){
         var y = $(this).data("num");
         var iLabel = results[y].recipe.label;
         var iUrl = results[y].recipe.url;
-        // console.log(results[y].recipe.label);
         recipes.push(iLabel);
         urls.push(iUrl);
 
-        // $("#favorites-display").val(" ");
-        
-        // $("#favorites-display").prepend("<div>" + iLabel + "</div>");
         var faves = $("<div>");
         var favNode = $("<a>");
         favNode.append(iLabel);
